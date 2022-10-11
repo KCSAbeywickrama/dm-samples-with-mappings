@@ -24,17 +24,23 @@
                 "MessageContentType": "{{input.MessageProperties.EventType}}",
                 "MessageContent": {
                     "FormId": "{{ input.FormId }}",
-                    "Content": {
-                        { form_content
-                        }
-                    },
+                    "Content": [
+                                "{{ input.Content.Data.taskData.smartFormData.droppedTrailer }}",
+                                "{{ input.Content.Data.taskData.smartFormData.pickupTrailer }}",
+                                "{{ input.Content.Data.taskData.smartFormData.bol }}",
+                                "{{ input.Content.Data.taskData.smartFormData.weight}}",
+                                "{{ input.Content.Data.taskData.smartFormData.pieces }}",
+                                "{{ input.Content.Data.taskData.smartFormData.seal }}",
+                                "{{ driverUnload }}",
+                                "{{ input.Content.Data.taskData.smartFormData.tankLevel }}"
+                            ],
                     "Coordinates": {
                         "Latitude": {
-                            { input.Content.Data.taskData.completedLocation.lat | default: 0.0
+                            { input.Content.Data.taskData.completedLocation.lat
                             }
                         },
                         "Longitude": {
-                            { input.Content.Data.taskData.completedLocation.lon | default: 0.0
+                            { input.Content.Data.taskData.completedLocation.lon
                             }
                         }
                     },
@@ -50,9 +56,7 @@
                                 }
                             },
                             "Id": "{{ asset.Id | dictionary_lookup: "AssetsInbound"}}",
-                            "Confirmed": {
-                                {asset.Confirmed | default: false
-                                }
+                            "Confirmed": false
                             }
                         }{% assign separator = "," %
                         }{% endfor %

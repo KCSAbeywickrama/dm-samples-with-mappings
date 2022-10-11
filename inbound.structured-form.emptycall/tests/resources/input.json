@@ -2,7 +2,7 @@
     "Assets": [
         {
             "Type": 2,
-            "Id": "shdrv2"
+            "Id": "SHDRV2"
         },
         {
             "Type": 1,
@@ -73,7 +73,7 @@
                                 "attributes": {
                                     "required": true,
                                     "label": "Weight",
-                                    "type": "number"
+                                    "sfType": "number"
                                 }
                             },
                             "pieces": {
@@ -82,7 +82,7 @@
                                 "attributes": {
                                     "required": true,
                                     "label": "Pieces",
-                                    "type": "number"
+                                    "sfType": "number"
                                 }
                             },
                             "seal": {
@@ -151,7 +151,7 @@
             "tripExternalKey": "v1:101:101:3131:True:True"
         },
         "triggeredAtUtc": "2021-11-19T22:32:48.346+00:00",
-        "_id": "619826120f88e74da3086611",
+        "id": "619826120f88e74da3086611",
         "TransId": "637729579731992821",
         "TenantId": "608544124",
         "SubType": "emptyCall",

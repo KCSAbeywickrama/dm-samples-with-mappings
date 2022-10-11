@@ -10,13 +10,13 @@
     "ContentType": "com.trimble.transportation.telematics.inbound.driver-login",
     "Content": {
         "Odometer": 0,
-        "UnitTrips": null,
-        "Position": null,
+        "UnitTrips": "",
+        "Position": "",
         "TripInformation": {
-            "TripName": null,
-            "Move": null,
-            "Leg": null,
-            "Stop": null,
+            "TripName": "",
+            "Move": 0.0,
+            "Leg": 0.0,
+            "Stop": 0.0,
             "OrderHeader": 0,
             "Assets": [
                 {

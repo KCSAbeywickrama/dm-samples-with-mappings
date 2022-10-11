@@ -19,14 +19,14 @@
                         "Assets": [
                             {
                                 "Type": 2,
-                                "Id": "TheJoshTruck",
+                                "Id": "SAMSUNG",
                                 "Confirmed": false
                             }
                         ],
                         "AdditionalDataElements": []
                     },
                     "HeaderInformation": {
-                        "CreateDateUtc": "2021-11-22T23:1:20+00:00"
+                        "CreateDateUtc": "2021-11-22T23:01:20.116+00:00"
                     }
                 }
             }

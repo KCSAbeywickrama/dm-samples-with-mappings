@@ -8,28 +8,23 @@
                 "MessageContentType": "{{ input.MessageProperties.EventType }}",
                 "MessageContent": {
                     "Odometer": {
-                        {input.Content.Odometer | default: 0.0
-                        }
+                        {input.Content.Odometer}
                     },
                     "UnitTrips": "{{input.Content.UnitTrips}}",
                     "Position": "{{input.Content.Position}}",
                     "TripInformation": {
                         "TripName": "{{input.Content.TripInformation.TripName}}",
                         "Move": {
-                            {input.Content.TripInformation.Move | default: 0.0
-                            }
+                            {input.Content.TripInformation.Move}
                         },
                         "Leg": {
-                            {input.Content.TripInformation.Leg | default: 0.0
-                            }
+                            {input.Content.TripInformation.Leg}
                         },
                         "Stop": {
-                            {input.Content.TripInformation.Stop | default: 0.0
-                            }
+                            {input.Content.TripInformation.Stop}
                         },
                         "OrderHeader": {
-                            {input.Content.TripInformation.OrderHeader | default: 0.0
-                            }
+                            {input.Content.TripInformation.OrderHeader}
                         },
                         "Assets": [
                             {% assign separator = "" %

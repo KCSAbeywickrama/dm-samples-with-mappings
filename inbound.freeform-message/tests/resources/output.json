@@ -28,10 +28,15 @@
                                 "Confirmed": false
                             }
                         ],
-                        "AdditionalDataElements": []
+                        "AdditionalDataElements": [
+                            {
+                                "Label": "TodaysMiles",
+                                "Value": "364"
+                            }
+                        ]
                     },
                     "HeaderInformation": {
-                        "CreateDateUtc": "2021-11-24T15:46:57+00:00"
+                        "CreateDateUtc": "2021-11-24T15:46:57.9937068+00:00"
                     }
                 }
             }

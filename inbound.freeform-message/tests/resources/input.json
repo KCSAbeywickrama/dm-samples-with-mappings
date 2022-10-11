@@ -16,7 +16,19 @@
                 "EmailAddress": null
             }
         ],
-        "TripInformation": null,
+        "TripInformation": {
+            "TripName": "",
+            "Move": null,
+            "Leg": null,
+            "Stop": 0.0,
+            "OrderHeader": 0.0,
+            "AdditionalDataElements": [
+                {
+                    "Label": "TodaysMiles",
+                    "Value": "364"
+                }
+            ]
+        },
         "HeaderInformation": {
             "CreateDateUtc": "2021-11-24T15:46:57.9937068+00:00"
         }

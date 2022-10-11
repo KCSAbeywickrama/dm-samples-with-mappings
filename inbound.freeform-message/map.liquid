@@ -33,12 +33,10 @@
                             }
                         },
                         "Stop": {
-                            {input.Content.TripInformation.Stop | default: 0.0
-                            }
+                            {input.Content.TripInformation.Stop}
                         },
                         "OrderHeader": {
-                            {input.Content.TripInformation.OrderHeader | default: 0.0
-                            }
+                            {input.Content.TripInformation.OrderHeader}
                         },
                         "Assets": [
                             {% assign separator = "" %
@@ -56,8 +54,7 @@
                                     }
                                 }"}}",
                                 "Confirmed": {
-                                    {asset.Confirmed | default: false
-                                    }
+                                    {default: false}
                                 }
                             } {% assign separator = "," %
                             } {% endfor %

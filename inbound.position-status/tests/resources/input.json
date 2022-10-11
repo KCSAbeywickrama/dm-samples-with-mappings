@@ -19,7 +19,14 @@
         "Odometer": 1.0,
         "Description": "0 mi WSW of University Heights, OH",
         "AdditionalDataElements": null,
-        "TripInformation": null,
+        "TripInformation": {
+            "AdditionalDataElements": [
+                {
+                    "Label": "TodaysMiles",
+                    "Value": "364"
+                }
+            ]
+        },
         "HeaderInformation": {
             "CreateDateUtc": "2021-11-29T13:35:00+00:00"
         }

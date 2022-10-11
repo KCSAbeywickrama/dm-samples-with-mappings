@@ -8,7 +8,7 @@
                 "MessageContentType": "com.trimble.transportation.telematics.inbound.position-status",
                 "MessageContent": {
                     "Assets": [],
-                    "StatusDate": "2021-11-29T13:35:00",
+                    "StatusDate": "2021-11-29T13:35:00+00:00",
                     "Speed": 0,
                     "Heading": 0,
                     "Position": {
@@ -35,7 +35,12 @@
                                 "Confirmed": false
                             }
                         ],
-                        "AdditionalDataElements": []
+                        "AdditionalDataElements": [
+                            {
+                                "Label": "TodaysMiles",
+                                "Value": "364"
+                            }
+                        ]
                     },
                     "HeaderInformation": {
                         "CreateDateUtc": "2021-11-29T13:35:00+00:00"

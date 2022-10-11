@@ -46,106 +46,89 @@ function transform(Input input) returns Output => {
 
 };
 
-type AssetsItem record {
-    int Type;
-    string Id;
-    boolean Confirmed?;
-};
-
-type TripInformation record {
-
-    string TripName?;
-    decimal Move?;
-    decimal Leg?;
-    decimal Stop?;
-    decimal OrderHeader?;
-    AssetsItem[] Assets?;
-    anydata AdditionalDataElements?;
-};
-
-type HeaderInformation record {
-
-    string CreateDateUtc;
-};
-
-type MessageContent record {
-
-    string EventId;
-    anydata OriginEventId;
-    int EventType;
-    int EventCode;
-    string EventDate;
-    anydata Comments;
-    anydata HosRuleSet;
-    anydata GpsPosition;
-    anydata Odometer;
-    anydata Malfunctions;
-    string EditDateTime;
-    anydata EditByUser;
-    anydata AdditionalDataElements;
-    TripInformation TripInformation;
-    HeaderInformation HeaderInformation;
-};
-
-type Data record {
-
-    string MessageGuid;
-    string ParentMessageGuid;
-    string MessageContentType;
-    MessageContent MessageContent;
-};
-
-type DtosItem record {
-
-    string 'type;
-    Data data;
-};
-
 type Output record {
-
-    DtosItem[] dtos;
-};
-
-type GpsPosition record {
-
-    decimal Latitude;
-    decimal Longitude;
-};
-
-type AdditionalDataElementsItem record {
-
-    string Label;
-    string Value;
-};
-
-type Content record {
-
-    string EventId;
-    anydata OriginEventId;
-    int EventType;
-    int EventCode;
-    string Comments;
-    GpsPosition GpsPosition;
-    decimal Odometer;
-    int Malfunctions;
-    string EditDateTime;
-    AdditionalDataElementsItem[] AdditionalDataElements;
-    TripInformation TripInformation;
-    HeaderInformation HeaderInformation;
-};
-
-type MessageProperties record {
-
-    string EventType;
-    string AuditId;
-    string MessageId;
+    record {
+        string 'type;
+        record {
+            string MessageGuid;
+            string ParentMessageGuid;
+            string MessageContentType;
+            record {
+                string EventId;
+                anydata OriginEventId;
+                int EventType;
+                int EventCode;
+                string EventDate;
+                anydata Comments;
+                anydata HosRuleSet;
+                anydata GpsPosition;
+                anydata Odometer;
+                anydata Malfunctions;
+                string EditDateTime;
+                anydata EditByUser;
+                anydata AdditionalDataElements;
+                record {
+                    string TripName;
+                    decimal Move;
+                    decimal Leg;
+                    decimal Stop;
+                    decimal OrderHeader;
+                    record {
+                        int Type;
+                        string Id;
+                        boolean Confirmed;
+                    }[] Assets;
+                    anydata AdditionalDataElements;
+                } TripInformation;
+                record {
+                    string CreateDateUtc;
+                } HeaderInformation;
+            } MessageContent;
+        } data;
+    }[] dtos;
 };
 
 type Input record {
-
     string CreateDate;
     string ContentType;
-    AssetsItem[] Assets;
-    Content Content;
-    MessageProperties MessageProperties;
+    record {
+        int Type;
+        string Id;
+        boolean Confirmed?;
+    }[] Assets;
+    record {
+        string EventId;
+        anydata OriginEventId;
+        int EventType;
+        int EventCode;
+        string Comments;
+        record {
+            decimal Latitude;
+            decimal Longitude;
+        } GpsPosition;
+        decimal Odometer;
+        int Malfunctions;
+        string EditDateTime;
+        record {
+            string Label;
+            string Value;
+        }[] AdditionalDataElements;
+        record {
+            string TripName?;
+            decimal Move?;
+            decimal Leg?;
+            decimal Stop?;
+            decimal OrderHeader?;
+            anydata[] Assets;
+            anydata AdditionalDataElements?;
+        } TripInformation;
+        record {
+            string CreateDateUtc;
+        } HeaderInformation;
+    } Content;
+    record {
+        string EventType;
+        string AuditId;
+        string MessageId;
+    } MessageProperties;
 };

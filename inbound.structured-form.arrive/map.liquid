@@ -1,42 +1,4 @@
-{% assign stopKey = input.Content.Data.stopKey | split: "::" %
-} {% assign stopNum = stopKey[
-        1
-    ] | default: 0.0 %
-} {% assign tripKey = input.Content.Data.tripKey | split: "::" %
-} {% assign tripNum = tripKey[
-        1
-    ] | default: 0.0 %
-} {% assign lat = input.Content.Data.taskData.startedLocation.lat | default: 0.0 %
-} {% assign lon = input.Content.Data.taskData.startedLocation.lon | default: 0.0 %
-} {% assign reverseMsgId = ""%
-}{% assign id_blocks = input.MessageProperties.MessageId | split: "-" %
-}{% for id_block in id_blocks %
-}{% assign reverseMsgId = reverseMsgId + "-" + id_block | split: "" | reverse %
-}{% endfor %
-}{% assign msgIdLen = reverseMsgId | size %
-}{% assign reverseMsgId = reverseMsgId | slice: 1, msgIdLen %
-}{% capture assets %
-} [
-    {% assign separator = "" %
-    } {% for asset in input.Assets %
-    } {
-        { separator
-        }
-    } {
-        "Type": {
-            { asset.Type
-            }
-        },
-        "Id": "{{ asset.Id | dictionary_lookup: "AssetsInbound"}}",
-        "Confirmed": {
-            {asset.Confirmed | default: false
-            }
-        }
-    } {% assign separator = "," %
-    } {% endfor %
-    }
-] {% endcapture %
-} {
+{
     "dtos": [
         {
             "type": "{{input.MessageProperties.EventType}}",
@@ -49,11 +11,11 @@
                     "Content": [],
                     "Coordinates": {
                         "Latitude": {
-                            { lat
+                            { input.Content.Data.taskData.startedLocation.lat
                             }
                         },
                         "Longitude": {
-                            { lon
+                            { input.Content.Data.taskData.startedLocation.lon
                             }
                         }
                     },
@@ -66,11 +28,11 @@
             }
         },
         {
-            "type": "com.trimble.transportation.telematics.inbound.trip-status",
+            "type": "{{input.MessageProperties.EventType}}",
             "data": {
                 "MessageGuid": "{{ reverseMsgId }}",
                 "ParentMessageGuid": "{{input.MessageProperties.AuditId}}",
-                "MessageContentType": "com.trimble.transportation.telematics.inbound.trip-status",
+                "MessageContentType": "{{input.MessageProperties.EventType}}",
                 "MessageContent": {
                     "TripStatusType": 3,
                     "TripStatusReason": 0,
@@ -88,19 +50,12 @@
                     "TripInformation": {
                         "TripName": null,
                         "Move": null,
-                        "Leg": {
-                            { tripNum | default: 0.0
-                            }
+                        "Leg": 8440
                         },
-                        "Stop": {
-                            { stopNum | default: 0.0
-                            }
+                        "Stop": 1
                         },
                         "OrderHeader": 0.0,
-                        "Assets": {
-                            { assets
-                            }
-                        },
+                        "Assets": [],
                         "AdditionalDataElements": []
                     },
                     "HeaderInformation": {

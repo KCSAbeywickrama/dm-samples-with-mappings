@@ -22,11 +22,6 @@
                     },
                     "Assets": [
                         {
-                            "Type": 2,
-                            "Id": "SHDRV2",
-                            "Confirmed": false
-                        },
-                        {
                             "Type": 1,
                             "Id": "CAN002",
                             "Confirmed": false

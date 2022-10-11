@@ -10,7 +10,12 @@
                     "Response": 1,
                     "RedispatchNow": "true",
                     "Reason": "",
-                    "AdditionalDataElements": [],
+                    "AdditionalDataElements": [
+                        {
+                            "Label": "TodaysMiles",
+                            "Value": "364"
+                        }
+                    ],
                     "TripInformation": {
                         "TripName": "",
                         "Move": 0.0,
@@ -19,17 +24,17 @@
                         "OrderHeader": 0,
                         "Assets": [
                             {
-                                "Type": 1,
-                                "Id": "TheJoshTruck",
-                                "Confirmed": false
-                            },
-                            {
                                 "Type": 2,
-                                "Id": "TheJoshTruck",
-                                "Confirmed": false
+                                "Id": "TEPDY",
+                                "Confirmed": true
                             }
                         ],
-                        "AdditionalDataElements": []
+                        "AdditionalDataElements": [
+                            {
+                                "Label": "TodaysMiles",
+                                "Value": "364"
+                            }
+                        ]
                     },
                     "HeaderInformation": {
                         "CreateDateUtc": "2021-11-23T17:56:25+00:00"

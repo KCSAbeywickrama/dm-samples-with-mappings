@@ -6,16 +6,22 @@
         },
         {
             "Type": 2,
-            "Id": "SAMSUNG"
+            "Id": "TEPDY",
+            "Confirmed": true
         }
     ],
     "ContentType": "TMWSystems.MobileConnect.Shared.Models.Messages.TripAcceptance",
-    "CreateDate": "",
+    "CreateDate": "2021-11-23T17:56:25+00:00",
     "Content": {
         "Response": 1,
         "RedispatchNow": true,
         "Reason": "",
-        "AdditionalDataElements": null,
+        "AdditionalDataElements": [
+            {
+                "Label": "TodaysMiles",
+                "Value": "364"
+            }
+        ],
         "TripInformation": {
             "TripName": null,
             "Move": null,
@@ -25,11 +31,16 @@
             "Assets": [
                 {
                     "Type": 2,
-                    "Id": "SAMSUNG",
-                    "Confirmed": false
+                    "Id": "TEPDY",
+                    "Confirmed": true
                 }
             ],
-            "AdditionalDataElements": null
+            "AdditionalDataElements": [
+                {
+                    "Label": "TodaysMiles",
+                    "Value": "364"
+                }
+            ]
         },
         "HeaderInformation": {
             "CreateDateUtc": "2021-11-23T17:56:25+00:00"

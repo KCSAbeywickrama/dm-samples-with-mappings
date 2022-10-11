@@ -2,7 +2,7 @@
     "Assets": [
         {
             "Type": 2,
-            "Id": "shdrv2"
+            "Id": "SHDRV2"
         },
         {
             "Type": 1,
@@ -55,7 +55,7 @@
                                 "attributes": {
                                     "required": true,
                                     "label": "Weight",
-                                    "type": "number"
+                                    "sType": "number"
                                 }
                             },
                             "pieces": {
@@ -64,7 +64,7 @@
                                 "attributes": {
                                     "required": true,
                                     "label": "Pieces",
-                                    "type": "number"
+                                    "sType": "number"
                                 }
                             },
                             "seal": {

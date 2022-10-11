@@ -55,10 +55,7 @@
                                     {asset.Type
                                     }
                                 },
-                                "Id": "{{ asset.Id | dictionary_lookup: "{
-                                    {DataDictionary_Inbound_LookupKey
-                                    }
-                                }"}}",
+                                "Id": "{{ asset.Id }}",
                                 "Confirmed": {
                                     {asset.Confirmed | default: false
                                     }

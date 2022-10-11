@@ -21,16 +21,13 @@
                     "TripInformation": {
                         "TripName": "{{input.TripInformation.TripName}}",
                         "Move": {
-                            {input.TripInformation.Move | default: 0.0
-                            }
+                            {input.TripInformation.Move}
                         },
                         "Leg": {
-                            {input.TripInformation.Leg | default: 0.0
-                            }
+                            {input.TripInformation.Leg}
                         },
                         "Stop": {
-                            {input.TripInformation.Stop | default: 0.0
-                            }
+                            {input.TripInformation.Stop}
                         },
                         "OrderHeader": {
                             {input.TripInformation.OrderHeader | default: 0.0

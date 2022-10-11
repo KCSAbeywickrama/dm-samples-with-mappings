@@ -10,16 +10,16 @@
     "ContentType": "com.trimble.transportation.telematics.inbound.driver-logout",
     "Content": {
         "Odometer": 0,
-        "UnitTrips": null,
+        "UnitTrips": "",
         "CloseTripFragments": false,
-        "Position": null,
-        "AdditionalDataElements": null,
+        "Position": "",
+        "AdditionalDataElements": "",
         "TripInformation": {
-            "TripName": null,
-            "Move": null,
-            "Leg": null,
-            "Stop": null,
-            "OrderHeader": 0,
+            "TripName": "",
+            "Move": 0.0,
+            "Leg": 0.0,
+            "Stop": 0.0,
+            "OrderHeader": null,
             "Assets": [
                 {
                     "Type": 2,

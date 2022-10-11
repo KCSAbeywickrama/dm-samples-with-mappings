@@ -21,7 +21,7 @@
         "Subject": "DIRECTIONS",
         "Message": "CUSTOMER: ANGELA'S GREENHOUSErnADDRESS: 1125 ELM AVErnADDR2:rnCITY: TORONTOrnST: ONrnZIP: ONrnPHONE: 654/651-2212rnTHIS IS A TEST OF DIRECTIONS THIS IS THE SECOND LINE THIS IS THE THIRD LINE",
         "HeaderInformation": {
-            "CreateDateUtc": "2022-01-06T19:46:10"
+            "CreateDateUtc": "2022-01-06T19:46:10+00:00"
         }
     }
 }

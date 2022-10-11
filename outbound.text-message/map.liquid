@@ -16,9 +16,7 @@
                             }
                         },
                         "Id": "{{ asset.Id | dictionary_lookup: "AssetsOutbound"}}",
-                        "Confirmed": {
-                            {asset.Confirmed | default: false
-                            }
+                        "Confirmed": false
                         }
                     } {% assign separator = "," %
                     } {% endif %

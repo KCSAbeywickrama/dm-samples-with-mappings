@@ -9,7 +9,8 @@ dependencies-toml-version = "2"
 [[package]]
 org = "ballerina"
 name = "io"
-version = "1.2.1"
+version = "1.3.0"
+scope = "testOnly"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"},
 	{org = "ballerina", name = "lang.value"}
@@ -25,7 +26,7 @@ version = "0.0.0"
 
 [[package]]
 org = "ballerina"
-name = "lang.value"
+name = "lang.string"
 version = "0.0.0"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"}
@@ -33,8 +34,17 @@ dependencies = [
 
 [[package]]
 org = "ballerina"
+name = "lang.value"
+version = "0.0.0"
+scope = "testOnly"
+dependencies = [
+	{org = "ballerina", name = "jballerina.java"}
+]
+
+[[package]]
+org = "ballerina"
 name = "observe"
-version = "1.0.4"
+version = "1.0.5"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"}
 ]
@@ -42,9 +52,10 @@ dependencies = [
 [[package]]
 org = "ballerina"
 name = "regex"
-version = "1.2.1"
+version = "1.3.0"
 dependencies = [
-	{org = "ballerina", name = "jballerina.java"}
+	{org = "ballerina", name = "jballerina.java"},
+	{org = "ballerina", name = "lang.string"}
 ]
 modules = [
 	{org = "ballerina", packageName = "regex", moduleName = "regex"}
@@ -63,17 +74,6 @@ modules = [
 ]
 
 [[package]]
-org = "ballerina"
-name = "time"
-version = "2.2.1"
-dependencies = [
-	{org = "ballerina", name = "jballerina.java"}
-]
-modules = [
-	{org = "ballerina", packageName = "time", moduleName = "time"}
-]
-
-[[package]]
 org = "ballerinai"
 name = "observe"
 version = "0.0.0"
@@ -86,18 +86,17 @@ modules = [
 ]
 
 [[package]]
-org = "kavith"
+org = "madusha"
 name = "inbound.structured_form.intermediatestop"
 version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "io"},
 	{org = "ballerina", name = "regex"},
 	{org = "ballerina", name = "test"},
-	{org = "ballerina", name = "time"},
 	{org = "ballerinai", name = "observe"}
 ]
 modules = [
-	{org = "kavith", packageName = "inbound.structured_form.intermediatestop", moduleName = "inbound.structured_form.intermediatestop"}
+	{org = "madusha", packageName = "inbound.structured_form.intermediatestop", moduleName = "inbound.structured_form.intermediatestop"}
 ]
 
 

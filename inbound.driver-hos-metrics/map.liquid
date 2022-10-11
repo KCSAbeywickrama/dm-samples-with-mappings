@@ -69,19 +69,6 @@
                             }{% assign separator = "," %
                             }{% endfor %
                             }
-                        ],
-                        "AdditionalDataElements": [
-                            {% assign separator = "" %
-                            }{% for element in hos_metric_dto.Content.TripInformation.AdditionalDataElements %
-                            }{
-                                { separator
-                                }
-                            }{
-                                "Label": "{{ element.Label}}",
-                                "Value": "{{ element.Value}}"
-                            }{% assign separator = "," %
-                            }{% endfor %
-                            }
                         ]
                     },
                     "HeaderInformation": {

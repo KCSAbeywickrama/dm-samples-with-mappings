@@ -34,8 +34,7 @@
                                 "Id": "ABSDRV",
                                 "Confirmed": false
                             }
-                        ],
-                        "AdditionalDataElements": []
+                        ]
                     },
                     "HeaderInformation": {
                         "CreateDateUtc": "2021-12-10T22:54:30.1462242+00:00"
@@ -74,8 +73,7 @@
                                 "Id": "ABSDRV",
                                 "Confirmed": false
                             }
-                        ],
-                        "AdditionalDataElements": []
+                        ]
                     },
                     "HeaderInformation": {
                         "CreateDateUtc": "2021-12-09T22:54:30.1462242+00:00"

@@ -1,0 +1,41 @@
+{
+    "Assets": [
+        {
+            "Type": 2,
+            "Id": "SAMSUNG",
+            "Confirmed": false
+        }
+    ],
+    "CreateDate": "2021-11-24T15:46:57.9937068+00:00",
+    "ContentType": "com.trimble.transportation.telematics.inbound.driver-logout",
+    "Content": {
+        "Odometer": 0,
+        "UnitTrips": null,
+        "CloseTripFragments": false,
+        "Position": null,
+        "AdditionalDataElements": null,
+        "TripInformation": {
+            "TripName": null,
+            "Move": null,
+            "Leg": null,
+            "Stop": null,
+            "OrderHeader": 0,
+            "Assets": [
+                {
+                    "Type": 2,
+                    "Id": "SAMSUNG",
+                    "Confirmed": false
+                }
+            ],
+            "AdditionalDataElements": null
+        },
+        "HeaderInformation": {
+            "CreateDateUtc": "2021-11-22T23:01:35.529+00:00"
+        }
+    },
+    "MessageProperties": {
+        "EventType": "com.trimble.transportation.telematics.inbound.driver-logout",
+        "AuditId": "d96df9c9-3b52-49fd-b488-3e330b07dc32",
+        "MessageId": "e920ec22-61d3-431c-ab0e-9b14fef4ea79"
+    }
+}

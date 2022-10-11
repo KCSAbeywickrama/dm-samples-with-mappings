@@ -1,0 +1,80 @@
+{
+    "dtos": [
+        {
+            "type": "{{ input.MessageProperties.EventType }}",
+            "data": {
+                "MessageGuid": "{{ input.MessageProperties.MessageId }}",
+                "ParentMessageGuid": "{{ input.MessageProperties.AuditId }}",
+                "MessageContentType": "{{ input.MessageProperties.EventType }}",
+                "MessageContent": {
+                    "EventId": "{{input.Content.EventId}}",
+                    "OriginEventId": null,
+                    "EventType": {
+                        {input.Content.EventType
+                        }
+                    },
+                    "EventCode": {
+                        {input.Content.EventCode
+                        }
+                    },
+                    "EventDate": "{{input.Content.EditDateTime | date: "%Y-%m-%dT%H:%M:%S+00: 00"}}",
+                    "Comments": null,
+                    "HosRuleSet": null,
+                    "GpsPosition": null,
+                    "Odometer": null,
+                    
+                    "Malfunctions": null,
+                    "EditDateTime": "{{input.Content.EditDateTime | date: "%Y-%m-%dT%H:%M:%S+00: 00"}}",
+                    "EditByUser": null,
+                    "AdditionalDataElements": null,
+                    "TripInformation": {
+                        "TripName": "{{input.Content.TripInformation.TripName}}",
+                        "Move": {
+                            {input.Content.TripInformation.Move| default: 0.0
+                            }
+                        },
+                        "Leg": {
+                            {input.Content.TripInformation.Leg| default: 0.0
+                            }
+                        },
+                        "Stop": {
+                            {input.Content.TripInformation.Stop| default: 0.0
+                            }
+                        },
+                        "OrderHeader": {
+                            {input.Content.TripInformation.OrderHeader| default: 0.0
+                            }
+                        },
+                        "Assets": [
+                            {% assign separator = "" %
+                            }{% for asset in input.Assets %
+                            }{
+                                {separator
+                                }
+                            }{
+                                "Type": {
+                                    {asset.Type
+                                    }
+                                },
+                                "Id": "{{ asset.Id | dictionary_lookup: "{
+                                    {DataDictionary_Inbound_LookupKey
+                                    }
+                                }"}}",
+                                "Confirmed": {
+                                    {asset.Confirmed | default: false
+                                    }
+                                }
+                            }{% assign separator = "," %
+                            }{% endfor %
+                            }
+                        ],
+                        "AdditionalDataElements": null
+                    },
+                    "HeaderInformation": {
+                        "CreateDateUtc": "{{input.Content.HeaderInformation.CreateDateUtc  | date: "%Y-%m-%dT%H:%M:%S+00: 00" }}"
+                    }
+                }
+            }
+        }
+    ]
+}

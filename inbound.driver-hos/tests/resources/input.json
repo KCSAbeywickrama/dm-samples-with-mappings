@@ -1,0 +1,55 @@
+{
+    "CreateDate": "2021-11-30T10:45:27+00:00",
+    "ContentType": "TMWSystems.MobileConnect.Shared.Models.Messages.DriverHosLog",
+    "Assets": [
+        {
+            "Type": 1,
+            "Id": "SAMSUNG"
+        },
+        {
+            "Type": 2,
+            "Id": "TESTPSDRV1"
+        }
+    ],
+    "Content": {
+        "EventId": "OnDuty",
+        "OriginEventId": null,
+        "EventType": 7,
+        "EventCode": 4,
+        "Comments": "Driver HOS Transformation for PS",
+        "GpsPosition": {
+            "Latitude": 12.55,
+            "Longitude": 30.87
+        },
+        "Odometer": 27500.5,
+        "Malfunctions": 3,
+        "EditDateTime": "2021-11-30T10:45:55+00:00",
+        "AdditionalDataElements": [
+            {
+                "Label": "malfunction_status",
+                "Value": "3"
+            },
+            {
+                "Label": "malfunction_code",
+                "Value": "3"
+            },
+            {
+                "Label": "diagnostic_status",
+                "Value": "1"
+            },
+            {
+                "Label": "diagnostic_code",
+                "Value": "6"
+            }
+        ],
+        "TripInformation": {},
+        "HeaderInformation": {
+            "CreateDateUtc": "2021-11-30T10:45:27+00:00"
+        }
+    },
+    "MessageProperties": {
+        "EventType": "com.trimble.transportation.telematics.inbound.driver-hos-log",
+        "AuditId": "813b4225-43a2-4f93-a4ee-83e591648891",
+        "MessageId": "fd6552d7-9252-4b57-af63-bd1783d05b23"
+    }
+}

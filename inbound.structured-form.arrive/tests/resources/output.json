@@ -1,0 +1,73 @@
+{
+    "dtos": [
+        {
+            "type": "com.trimble.transportation.telematics.inbound.structured-form",
+            "data": {
+                "MessageGuid": "d422afe2-04b8-478e-bb15-1ecb3ca4cd3f",
+                "ParentMessageGuid": "a263fe77-6d3e-4094-bc0a-d5bd4b31603e",
+                "MessageContentType": "com.trimble.transportation.telematics.inbound.structured-form",
+                "MessageContent": {
+                    "FormId": "taskComplete.arrive",
+                    "Content": [],
+                    "Coordinates": {
+                        "Latitude": 49.2799148,
+                        "Longitude": -123.1204566
+                    },
+                    "Assets": [
+                        {
+                            "Type": 2,
+                            "Id": "SHDRV2",
+                            "Confirmed": false
+                        },
+                        {
+                            "Type": 1,
+                            "Id": "CAN002",
+                            "Confirmed": false
+                        }
+                    ],
+                    "CreateDate": "2021-11-19T22:29:51+00:00"
+                }
+            }
+        },
+        {
+            "type": "com.trimble.transportation.telematics.inbound.trip-status",
+            "data": {
+                "MessageGuid": "2efa224d-8b40-e874-51bb-f3dc4ac3bce1",
+                "ParentMessageGuid": "a263fe77-6d3e-4094-bc0a-d5bd4b31603e",
+                "MessageContentType": "com.trimble.transportation.telematics.inbound.trip-status",
+                "MessageContent": {
+                    "TripStatusType": 3,
+                    "TripStatusReason": 0,
+                    "Location": {
+                        "Latitude": 49.2799148,
+                        "Longitude": -123.1204566
+                    },
+                    "Odometer": 0.0,
+                    "TripInformation": {
+                        "TripName": null,
+                        "Move": null,
+                        "Leg": 8440,
+                        "Stop": 1,
+                        "OrderHeader": 0.0,
+                        "Assets": [
+                            {
+                                "Type": 2,
+                                "Id": "SHDRV2",
+                                "Confirmed": false
+                            },
+                            {
+                                "Type": 1,
+                                "Id": "CAN002",
+                                "Confirmed": false
+                            }
+                        ],
+                        "AdditionalDataElements": []
+                    },
+                    "HeaderInformation": {
+                        "CreateDateUtc": "2021-11-19T22:29:51+00:00"
+                    }
+                }
+            }
+        }
+    ]
+}

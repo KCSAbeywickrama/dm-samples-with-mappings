@@ -1,0 +1,45 @@
+{
+    "dtos": [
+        {
+            "type": "com.trimble.transportation.telematics.inbound.driver-hos-log",
+            "data": {
+                "MessageGuid": "fd6552d7-9252-4b57-af63-bd1783d05b23",
+                "ParentMessageGuid": "813b4225-43a2-4f93-a4ee-83e591648891",
+                "MessageContentType": "com.trimble.transportation.telematics.inbound.driver-hos-log",
+                "MessageContent": {
+                    "EventId": "OnDuty",
+                    "OriginEventId": null,
+                    "EventType": 7,
+                    "EventCode": 4,
+                    "EventDate": "2021-11-30T10:45:55+00:00",
+                    "Comments": null,
+                    "HosRuleSet": null,
+                    "GpsPosition": null,
+                    "Odometer": null,
+                    "Malfunctions": null,
+                    "EditDateTime": "2021-11-30T10:45:55+00:00",
+                    "EditByUser": null,
+                    "AdditionalDataElements": null,
+                    "TripInformation": {
+                        "TripName": "",
+                        "Move": 0.0,
+                        "Leg": 0.0,
+                        "Stop": 0.0,
+                        "OrderHeader": 0.0,
+                        "Assets": [
+                            {
+                                "Type": 1,
+                                "Id": "SAMSUNG",
+                                "Confirmed": false
+                            }
+                        ],
+                        "AdditionalDataElements": null
+                    },
+                    "HeaderInformation": {
+                        "CreateDateUtc": "2021-11-30T10:45:27+00:00"
+                    }
+                }
+            }
+        }
+    ]
+}

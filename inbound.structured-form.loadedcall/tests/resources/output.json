@@ -1,0 +1,40 @@
+{
+    "dtos": [
+        {
+            "type": "com.trimble.transportation.telematics.inbound.structured-form",
+            "data": {
+                "MessageGuid": "2d012b5a-c424-46e8-97e3-7fd5e2717ff1",
+                "ParentMessageGuid": "0cf30ca4-8d32-48b1-aca3-05c9cb9c6126",
+                "MessageContentType": "com.trimble.transportation.telematics.inbound.structured-form",
+                "MessageContent": {
+                    "FormId": "taskComplete.loadedCall",
+                    "Content": [
+                        "124",
+                        "4",
+                        "5",
+                        "666",
+                        "",
+                        "Tt1"
+                    ],
+                    "Coordinates": {
+                        "Latitude": 49.2798961,
+                        "Longitude": -123.1203094
+                    },
+                    "Assets": [
+                        {
+                            "Type": 2,
+                            "Id": "SHDRV2",
+                            "Confirmed": false
+                        },
+                        {
+                            "Type": 1,
+                            "Id": "CAN002",
+                            "Confirmed": false
+                        }
+                    ],
+                    "CreateDate": "2021-11-19T22:30:17+00:00"
+                }
+            }
+        }
+    ]
+}

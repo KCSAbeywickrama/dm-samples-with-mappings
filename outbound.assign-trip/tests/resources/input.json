@@ -1,0 +1,377 @@
+{
+    "Assets": [
+        {
+            "Type": "Tractor",
+            "Id": "TheJoshTruck",
+            "Confirmed": true
+        },
+        {
+            "Type": "Driver",
+            "Id": "SHDRV",
+            "Confirmed": true
+        }
+    ],
+    "AssignTrip": {
+        "TripStartTime": "2021-09-14T13:06:45-06:00",
+        "AutoStartTrip": true,
+        "TripType": 2,
+        "AutoEndTrip": true,
+        "InProgress": true,
+        "RouteNumber": 31303,
+        "Assets": [
+            {
+                "Type": "Tractor",
+                "Id": "TheJoshTruck",
+                "Confirmed": true
+            },
+            {
+                "Type": "Tractor",
+                "Id": "",
+                "Confirmed": true
+            },
+            {
+                "Type": "Driver",
+                "Id": "PFS01",
+                "Confirmed": true
+            }
+        ],
+        "Description": "00066948 01",
+        "Name": "00066948 01",
+        "TripForms": [],
+        "stops": [
+            {
+                "StopNumber": 1,
+                "EarliestArrival": "2021-06-01T10:00:00-06:00",
+                "EstimatedArrival": "2021-06-01T10:00:00-06:00",
+                "LatestArrival": "2021-06-01T10:00:00-06:00",
+                "EstimatedDeparture": "2021-06-01T10:00:00-06:00",
+                "Location": {
+                    "Location": {
+                        "cmp_id": "UNKNOWN"
+                    },
+                    "Id": "CUSJON",
+                    "AltId": "",
+                    "Name": "JON CUSTOMER",
+                    "Address": "103 EQUESTRIAN WAY",
+                    "Address2": "",
+                    "City": "SHELBYVILLE",
+                    "State": "TN",
+                    "CountryCode": "USA",
+                    "Zip": "37160",
+                    "Latitude": 35.52387,
+                    "Longitude": -86.433736
+                },
+                "Description": "Stop 1",
+                "Name": "JON CUSTOMER",
+                "Actions": 7,
+                "ArrivalForms": [
+                    {
+                        "FormId": "taskComplete.loadedCall",
+                        "TripInformation": {
+                            "TripName": "00066948-01",
+                            "Stop": 1,
+                            "OrderHeader": 66948
+                        },
+                        "HeaderInformation": {
+                            "CreateDateUtc": "2021-06-14T18:47:09.6373191+00:00"
+                        },
+                        "StopInformation": {
+                            "StopName": "JON CUSTOMER",
+                            "EventNameAndId": " ()",
+                            "Sequence": 1,
+                            "ArrivalDate": "2021-06-01T10:00:00-06:00",
+                            "DepartureDate": "2021-06-01T10:00:00-06:00",
+                            "EarliestDate": "2021-06-01T10:00:00-06:00",
+                            "LatestDate": "2021-06-01T10:00:00-06:00"
+                        },
+                        "FreightInformation": [
+                            {
+                                "Order": "00066948",
+                                "CommodityId": "FAK",
+                                "CommodityName": "FAK"
+                            }
+                        ],
+                        "OrderInformationList": [
+                            {
+                                "OrderNumber": "00066948",
+                                "OrderHeaderNumber": 66948,
+                                "RevType1DescriptionAndCode": " ()",
+                                "RevType2DescriptionAndCode": " ()",
+                                "RevType3DescriptionAndCode": " ()",
+                                "RevType4DescriptionAndCode": " ()",
+                                "BillToNameAndId": " ()"
+                            }
+                        ],
+                        "TripActions": [
+                            {
+                                "Category": 1
+                            }
+                        ]
+                    }
+                ],
+                "ArrivalGeofences": [
+                    {
+                        "Type": 10,
+                        "Points": [
+                            {
+                                "Latitude": 35.52387,
+                                "Longitude": -86.433736
+                            }
+                        ],
+                        "Radius": 1584
+                    }
+                ],
+                "ApproachingForms": [],
+                "ApproachingGeofences": [
+                    {
+                        "Type": 30,
+                        "Points": [
+                            {
+                                "Latitude": 35.52387,
+                                "Longitude": -86.433736
+                            }
+                        ],
+                        "Radius": 5280
+                    }
+                ],
+                "DepartureForms": [],
+                "DepartureGeofences": [
+                    {
+                        "Type": 20,
+                        "Points": [
+                            {
+                                "Latitude": 35.52387,
+                                "Longitude": -86.433736
+                            }
+                        ],
+                        "Radius": 2640
+                    }
+                ],
+                "Sequenced": true
+            },
+            {
+                "StopNumber": 2,
+                "EarliestArrival": "2021-06-01T11:30:00-06:00",
+                "EstimatedArrival": "2021-06-01T11:30:00-06:00",
+                "LatestArrival": "2021-06-01T11:30:00-06:00",
+                "EstimatedDeparture": "2021-06-01T11:30:00-06:00",
+                "Location": {
+                    "Location": {
+                        "cmp_id": "UNKNOWN"
+                    },
+                    "Id": "SMSHM",
+                    "AltId": "",
+                    "Name": "SCOTT HOME",
+                    "Address": "2917 PELLAS PLACE",
+                    "Address2": "",
+                    "City": "MURFREESBORO",
+                    "State": "TN",
+                    "CountryCode": "USA",
+                    "Zip": "37127",
+                    "Latitude": 35.790367,
+                    "Longitude": -86.334955
+                },
+                "Description": "Stop 2",
+                "Name": "SCOTT HOME",
+                "Actions": 7,
+                "ArrivalForms": [
+                    {
+                        "FormId": "taskComplete.intermediateStop",
+                        "TripInformation": {
+                            "TripName": "00066948-01",
+                            "Stop": 2,
+                            "OrderHeader": 66948
+                        },
+                        "HeaderInformation": {
+                            "CreateDateUtc": "2021-06-14T18:47:09.6374197+00:00"
+                        },
+                        "StopInformation": {
+                            "StopName": "SCOTT HOME",
+                            "EventNameAndId": " ()",
+                            "Sequence": 2,
+                            "ArrivalDate": "2021-06-01T11:30:00-06:00",
+                            "DepartureDate": "2021-06-01T11:30:00-06:00",
+                            "EarliestDate": "2021-06-01T11:30:00-06:00",
+                            "LatestDate": "2021-06-01T11:30:00-06:00"
+                        },
+                        "FreightInformation": [
+                            {
+                                "Order": "00066948",
+                                "CommodityId": "FAK",
+                                "CommodityName": "FAK"
+                            }
+                        ],
+                        "OrderInformationList": [
+                            {
+                                "OrderNumber": "00066948",
+                                "OrderHeaderNumber": 66948,
+                                "RevType1DescriptionAndCode": " ()",
+                                "RevType2DescriptionAndCode": " ()",
+                                "RevType3DescriptionAndCode": " ()",
+                                "RevType4DescriptionAndCode": " ()",
+                                "BillToNameAndId": " ()"
+                            }
+                        ],
+                        "TripActions": [
+                            {
+                                "Category": 1
+                            }
+                        ]
+                    }
+                ],
+                "ArrivalGeofences": [
+                    {
+                        "Type": 10,
+                        "Points": [
+                            {
+                                "Latitude": 35.790367,
+                                "Longitude": -86.334955
+                            }
+                        ],
+                        "Radius": 1584
+                    }
+                ],
+                "ApproachingForms": [],
+                "ApproachingGeofences": [
+                    {
+                        "Type": 30,
+                        "Points": [
+                            {
+                                "Latitude": 35.790367,
+                                "Longitude": -86.334955
+                            }
+                        ],
+                        "Radius": 5280
+                    }
+                ],
+                "DepartureForms": [],
+                "DepartureGeofences": [
+                    {
+                        "Type": 20,
+                        "Points": [
+                            {
+                                "Latitude": 35.790367,
+                                "Longitude": -86.334955
+                            }
+                        ],
+                        "Radius": 2640
+                    }
+                ],
+                "Sequenced": true
+            },
+            {
+                "StopNumber": 90,
+                "EarliestArrival": "2021-06-01T13:00:00-06:00",
+                "EstimatedArrival": "2021-06-01T13:00:00-06:00",
+                "LatestArrival": "2021-06-01T13:00:00-06:00",
+                "EstimatedDeparture": "2021-06-01T13:00:00-06:00",
+                "Location": {
+                    "Location": {
+                        "cmp_id": "UNKNOWN"
+                    },
+                    "Id": "TARGT",
+                    "AltId": "",
+                    "Name": "TARGET SMYRNA",
+                    "Address": "803 INDUSTRIAL BOULEVARD",
+                    "Address2": "",
+                    "City": "SMYRNA",
+                    "State": "TN",
+                    "CountryCode": "USA",
+                    "Zip": "37167",
+                    "Latitude": 35.978458,
+                    "Longitude": -86.573333
+                },
+                "Description": "Stop 90",
+                "Name": "TARGET SMYRNA",
+                "Actions": 7,
+                "ArrivalForms": [
+                    {
+                        "FormId": "taskComplete.emptyCall",
+                        "TripInformation": {
+                            "TripName": "00066948-01",
+                            "Stop": 90,
+                            "OrderHeader": 66948
+                        },
+                        "HeaderInformation": {
+                            "CreateDateUtc": "2021-06-14T18:47:09.6374798+00:00"
+                        },
+                        "StopInformation": {
+                            "StopName": "TARGET SMYRNA",
+                            "EventNameAndId": " ()",
+                            "Sequence": 90,
+                            "ArrivalDate": "2021-06-01T13:00:00-06:00",
+                            "DepartureDate": "2021-06-01T13:00:00-06:00",
+                            "EarliestDate": "2021-06-01T13:00:00-06:00",
+                            "LatestDate": "2021-06-01T13:00:00-06:00"
+                        },
+                        "FreightInformation": [
+                            {
+                                "Order": "00066948",
+                                "CommodityId": "FAK",
+                                "CommodityName": "FAK"
+                            }
+                        ],
+                        "OrderInformationList": [
+                            {
+                                "OrderNumber": "00066948",
+                                "OrderHeaderNumber": 66948,
+                                "RevType1DescriptionAndCode": " ()",
+                                "RevType2DescriptionAndCode": " ()",
+                                "RevType3DescriptionAndCode": " ()",
+                                "RevType4DescriptionAndCode": " ()",
+                                "BillToNameAndId": " ()"
+                            }
+                        ],
+                        "TripActions": [
+                            {
+                                "Category": 2
+                            }
+                        ]
+                    }
+                ],
+                "ArrivalGeofences": [
+                    {
+                        "Type": 10,
+                        "Points": [
+                            {
+                                "Latitude": 35.978458,
+                                "Longitude": -86.573333
+                            }
+                        ],
+                        "Radius": 1584
+                    }
+                ],
+                "ApproachingForms": [],
+                "ApproachingGeofences": [
+                    {
+                        "Type": 30,
+                        "Points": [
+                            {
+                                "Latitude": 35.978458,
+                                "Longitude": -86.573333
+                            }
+                        ],
+                        "Radius": 5280
+                    }
+                ],
+                "DepartureForms": [],
+                "DepartureGeofences": [
+                    {
+                        "Type": 20,
+                        "Points": [
+                            {
+                                "Latitude": 35.978458,
+                                "Longitude": -86.573333
+                            }
+                        ],
+                        "Radius": 2640
+                    }
+                ],
+                "Sequenced": true
+            }
+        ],
+        "HeaderInformation": {
+            "CreateDateUtc": "2021-06-14T18:06:45+00:00"
+        }
+    }
+}

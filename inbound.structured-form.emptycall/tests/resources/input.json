@@ -1,0 +1,167 @@
+{
+    "Assets": [
+        {
+            "Type": 2,
+            "Id": "shdrv2"
+        },
+        {
+            "Type": 1,
+            "Id": "CAN002"
+        }
+    ],
+    "FormId": "taskComplete.emptyCall",
+    "CreateDate": "2021-11-19T22:32:48+00:00",
+    "Content": {
+        "DriverId": "shdrv2",
+        "MobileID": "7788864985",
+        "IntEventType": "taskComplete",
+        "Data": {
+            "taskData": {
+                "startedAtUtc": "2021-11-19T22:32:25.736+00:00",
+                "startedLocation": {
+                    "lat": 49.2798846,
+                    "lon": -123.1205849
+                },
+                "odometer": {},
+                "startedDriverId": "shdrv2",
+                "isSmart": true,
+                "smartFormData": {
+                    "droppedTrailer": "Tt2",
+                    "pickupTrailer": "none",
+                    "bol": "123",
+                    "weight": "4",
+                    "pieces": "5",
+                    "seal": "666",
+                    "driverUnload": "yes",
+                    "tankLevel": "7",
+                    "sendNextDispatch": "yes"
+                },
+                "smartForm": {
+                    "id": "emptyCall",
+                    "version": 0,
+                    "formType": "i",
+                    "schema": {
+                        "title": "EmptyCall",
+                        "fields": {
+                            "droppedTrailer": {
+                                "ctype": "matq-input",
+                                "dtype": "text",
+                                "attributes": {
+                                    "required": false,
+                                    "label": "Dropped Trailer"
+                                }
+                            },
+                            "pickupTrailer": {
+                                "ctype": "matq-input",
+                                "dtype": "text",
+                                "attributes": {
+                                    "required": false,
+                                    "label": "Pickup Trailer"
+                                }
+                            },
+                            "bol": {
+                                "ctype": "matq-input",
+                                "dtype": "text",
+                                "attributes": {
+                                    "required": true,
+                                    "label": "BOL"
+                                }
+                            },
+                            "weight": {
+                                "ctype": "matq-input",
+                                "dtype": "number",
+                                "attributes": {
+                                    "required": true,
+                                    "label": "Weight",
+                                    "type": "number"
+                                }
+                            },
+                            "pieces": {
+                                "ctype": "matq-input",
+                                "dtype": "number",
+                                "attributes": {
+                                    "required": true,
+                                    "label": "Pieces",
+                                    "type": "number"
+                                }
+                            },
+                            "seal": {
+                                "ctype": "matq-input",
+                                "dtype": "text",
+                                "attributes": {
+                                    "required": false,
+                                    "label": "Seal"
+                                }
+                            },
+                            "driverUnload": {
+                                "ctype": "matq-yes-no",
+                                "dtype": "text",
+                                "attributes": {
+                                    "required": false,
+                                    "label": "Driver Unload",
+                                    "positiveLabel": "Yes",
+                                    "negativeLabel": "No"
+                                }
+                            },
+                            "tankLevel": {
+                                "ctype": "matq-dropdown",
+                                "dtype": "text",
+                                "attributes": {
+                                    "required": true,
+                                    "text": "Tank Level",
+                                    "items": [
+                                        "1",
+                                        "2",
+                                        "3",
+                                        "4",
+                                        "5",
+                                        "6",
+                                        "7",
+                                        "8"
+                                    ],
+                                    "selectLabel": "Select Tank Level"
+                                }
+                            },
+                            "sendNextDispatch": {
+                                "ctype": "matq-yes-no",
+                                "dtype": "text",
+                                "attributes": {
+                                    "required": false,
+                                    "label": "Send Next Dispatch",
+                                    "positiveLabel": "Yes",
+                                    "negativeLabel": "No"
+                                }
+                            }
+                        }
+                    }
+                },
+                "completedAtUtc": "2021-11-19T22:32:48.278+00:00",
+                "completedLocation": {
+                    "lat": 49.2799245,
+                    "lon": -123.1205873
+                },
+                "completedDriverId": "shdrv2",
+                "baseTaskType": "smartForm",
+                "isFirstTask": false,
+                "isLastTask": false
+            },
+            "stopKey": "stop::90",
+            "tripKey": "trip::8440",
+            "stopExternalKey": "v2:101:101:3131:3436:True",
+            "tripExternalKey": "v1:101:101:3131:True:True"
+        },
+        "triggeredAtUtc": "2021-11-19T22:32:48.346+00:00",
+        "_id": "619826120f88e74da3086611",
+        "TransId": "637729579731992821",
+        "TenantId": "608544124",
+        "SubType": "emptyCall",
+        "ProcessedAtUtc": "2021-11-19T22:32:53.199498+00:00",
+        "TractorId": "CAN002",
+        "ConnectedTractorId": null
+    },
+    "MessageProperties": {
+        "EventType": "com.trimble.transportation.telematics.inbound.structured-form",
+        "AuditId": "6c2a56b0-bc45-48d7-a112-a74c8220d5f9",
+        "MessageId": "ed12de0a-2973-4068-85dc-68a7324c148b"
+    }
+}

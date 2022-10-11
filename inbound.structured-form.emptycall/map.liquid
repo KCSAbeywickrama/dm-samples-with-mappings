@@ -1,0 +1,66 @@
+{% if input.Content.Data.taskData.smartFormData.driverUnload == "yes" %
+}{% assign driverUnload = "Y" %
+}{% else %
+}{% assign driverUnload = "N" %
+}{% endif %
+}{% capture form_content %
+}[
+    "{{ input.Content.Data.taskData.smartFormData.droppedTrailer }}",
+    "{{ input.Content.Data.taskData.smartFormData.pickupTrailer }}",
+    "{{ input.Content.Data.taskData.smartFormData.bol }}",
+    "{{ input.Content.Data.taskData.smartFormData.weight}}",
+    "{{ input.Content.Data.taskData.smartFormData.pieces }}",
+    "{{ input.Content.Data.taskData.smartFormData.seal }}",
+    "{{ driverUnload }}",
+    "{{ input.Content.Data.taskData.smartFormData.tankLevel }}"
+]{% endcapture %
+}{
+    "dtos": [
+        {
+            "type": "{{input.MessageProperties.EventType}}",
+            "data": {
+                "MessageGuid": "{{input.MessageProperties.MessageId}}",
+                "ParentMessageGuid": "{{input.MessageProperties.AuditId}}",
+                "MessageContentType": "{{input.MessageProperties.EventType}}",
+                "MessageContent": {
+                    "FormId": "{{ input.FormId }}",
+                    "Content": {
+                        { form_content
+                        }
+                    },
+                    "Coordinates": {
+                        "Latitude": {
+                            { input.Content.Data.taskData.completedLocation.lat | default: 0.0
+                            }
+                        },
+                        "Longitude": {
+                            { input.Content.Data.taskData.completedLocation.lon | default: 0.0
+                            }
+                        }
+                    },
+                    "Assets": [
+                        {% assign separator = "" %
+                        }{% for asset in input.Assets %
+                        }{
+                            { separator
+                            }
+                        }{
+                            "Type": {
+                                { asset.Type
+                                }
+                            },
+                            "Id": "{{ asset.Id | dictionary_lookup: "AssetsInbound"}}",
+                            "Confirmed": {
+                                {asset.Confirmed | default: false
+                                }
+                            }
+                        }{% assign separator = "," %
+                        }{% endfor %
+                        }
+                    ],
+                    "CreateDate": "{{input.CreateDate | date: "%Y-%m-%dT%H:%M:%S+00: 00" }}"
+                }
+            }
+        }
+    ]
+}

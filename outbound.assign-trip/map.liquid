@@ -1,0 +1,550 @@
+{
+    "dtos": [
+        {
+            "type": "com.trimble.transportation.telematics.outbound.assign-trip",
+            "data": {
+                "Description": "{{ input.AssignTrip.Description }}",
+                "TripId": "{{ input.AssignTrip.RouteNumber }}",
+                "Assets": [
+                    {% assign separator = "" %
+                    } {% for asset in input.AssignTrip.Assets %
+                    }{% if asset.Id != "" %
+                    }{
+                        { separator
+                        }
+                    } {
+                        "Type": {
+                            { asset.Type | dictionary_lookup: "AssetType"
+                            }
+                        },
+                        "Id": "{{ asset.Id | dictionary_lookup: "AssetsOutbound"}}",
+                        "Confirmed": {
+                            {asset.Confirmed | default: false
+                            }
+                        }
+                    } {% assign separator = "," %
+                    }{% endif %
+                    } {% endfor %
+                    }
+                ],
+                {% capture genericOrders %
+                } {% assign separator = "" %
+                }{% for assignTripStop in input.AssignTrip.stops %
+                }{% assign arrivalForm = assignTripStop.ArrivalForms | first %
+                } {% for order in arrivalForm.OrderInformationList %
+                }{
+                    { separator
+                    }
+                }  {% assign OrderId = order.OrderHeaderNumber %
+                } {% assign OrderLabel = order.OrderNumber %
+                }  {
+                    "OrderId": "{{OrderId}}",
+                    "OrderLabel": "{{OrderLabel}}" {% capture RemarksArray %
+                    } {% assign separator = "" %
+                    } {% for note in arrivalForm.NoteInformation %
+                    } {% if note.KeyType == 2 or order.OrderNumber == note.Key %
+                    }{
+                        { separator
+                        }
+                    }{
+                        "Label": "{{note.TypeCode}}",
+                        "Value": "{{note.Note}}"
+                    } {% endif %
+                    } {% assign separator = "+" %
+                    }{% endfor %
+                    }{% endcapture %
+                    } {% assign Remarks = RemarksArray | split: '+' |  join: ',' %
+                    },
+                    "Remarks": [
+                        {
+                            {Remarks
+                            }
+                        }{% if Remarks != null %
+                        },
+                        {% endif %
+                        }{% if order.Remarks != null%
+                        } {
+                            "Label": "Remark",
+                            "Value": "{{order.Remarks}}"
+                        } {% endif %
+                        }
+                    ],
+                    "ReferenceNumbers": [
+                        {% assign separator = "" %
+                        } {% for orderReference in arrivalForm.OrderReferences %
+                        } {% if order.OrderNumber == orderReference.OrderNumber %
+                        }{
+                            { separator
+                            }
+                        }{
+                            "Label": "{{orderReference.Reference.ReferenceId}}",
+                            "Value": "{{orderReference.Reference.ReferenceNumber}}"
+                        } {% endif %
+                        } {% assign separator = "," %
+                        }{% endfor %
+                        }
+                    ]  {% capture ClassificationsArray %
+                    } {% if order.RevType1Code != null and order.RevType1Code != "UNK" and order.RevType1Code != "Unknown" and order.RevType1Code != "Unk" %
+                    } {
+                        "Label": "{{order.RevType1Code}}",
+                        "Value": "{{order.RevType1Description}}"
+                    }+ {% endif %
+                    } {% if order.RevType2Code != null and order.RevType2Code != "UNK" and order.RevType2Code != "Unknown" and order.RevType2Code != "Unk" %
+                    } {
+                        "Label": "{{order.RevType2Code}}",
+                        "Value": "{{order.RevType2Description}}"
+                    }+ {% endif %
+                    } {% if order.RevType3Code != null and order.RevType3Code != "UNK" and order.RevType3Code != "Unknown" and order.RevType3Code != "Unk" %
+                    } {
+                        "Label": "{{order.RevType3Code}}",
+                        "Value": "{{order.RevType3Description}}"
+                    }+ {% endif %
+                    } {% if order.RevType4Code != null and order.RevType4Code != "UNK" and order.RevType4Code != "Unknown" and order.RevType4Code != "Unk" %
+                    } {
+                        "Label": "{{order.RevType4Code}}",
+                        "Value": "{{order.RevType4Description}}"
+                    } {% endif %
+                    } {% endcapture %
+                    } {% assign Classifications = ClassificationsArray | split: '+' |  join: ','%
+                    },
+                    "Classifications": [
+                        {
+                            {Classifications
+                            }
+                        }
+                    ]
+                }  {% assign separator = "*" %
+                } {% endfor %
+                }{% endfor %
+                } {% endcapture %
+                }{% assign Orders = genericOrders | split: '*' | uniq | join: ','%
+                }"Orders": [
+                    {
+                        {Orders
+                        }
+                    }
+                ],
+                "Stops": [
+                    {% assign separator = "" %
+                    } {% for assignTripStop in input.AssignTrip.stops %
+                    }{% assign arrivalForm = assignTripStop.ArrivalForms | first %
+                    }{% capture ReferencesArray %
+                    }{% if arrivalForm.StopReferences != null %
+                    }{% assign separator1 = "" %
+                    }{% for stopReference in arrivalForm.StopReferences %
+                    }{% if stopReference.Reference != null%
+                    }{% if stopReference.Reference.ReferenceName == "SEAL" %
+                    }{% assign SEALValue =  stopReference.Reference.ReferenceNumber %
+                    }{% endif %
+                    }{% if stopReference.Reference.ReferenceName == "BOL" %
+                    }{% assign BOLValue =  stopReference.Reference.ReferenceNumber %
+                    }{% endif %
+                    } {
+                        { separator1
+                        }
+                    } {
+                        "Label": "{{stopReference.Reference.ReferenceName}}",
+                        "Value": "{{stopReference.Reference.ReferenceNumber}}"
+                    }{% endif %
+                    }{% assign separator1 = "+" %
+                    }{% endfor %
+                    }{% endif %
+                    }{% endcapture %
+                    }{% assign ReferenceNumbers = ReferencesArray | split: '+' | uniq |  join: ',' %
+                    }{% if arrivalForm.StopInformation != null %
+                    }{% for action in arrivalForm.TripActions %
+                    }  {% if action.Category == 1 %
+                    } {% assign IsFreightPickup = true %
+                    } {% break %
+                    } {% else %
+                    } {% assign IsFreightPickup = false %
+                    } {% endif %
+                    }  {% endfor %
+                    } {% for action in arrivalForm.TripActions %
+                    }  {% if action.Category == 3 %
+                    } {% assign IsTrailerHook = true %
+                    } {% break %
+                    } {% else %
+                    } {% assign IsTrailerHook = false %
+                    } {% endif %
+                    }  {% endfor %
+                    } {% for action in arrivalForm.TripActions %
+                    }  {% if action.Category == 2 %
+                    } {% assign IsFreightDelivery = true %
+                    } {% break %
+                    } {% else %
+                    } {% assign IsFreightDelivery = false %
+                    } {% endif %
+                    }  {% endfor %
+                    } {% for action in arrivalForm.TripActions %
+                    }  {% if action.Category == 4 %
+                    } {% assign IsTrailerUnhook = true %
+                    } {% break %
+                    } {% else %
+                    } {% assign IsTrailerUnhook = false %
+                    } {% endif %
+                    }  {% endfor %
+                    }{% for action in arrivalForm.TripActions %
+                    }{% if action.Category == 5 %
+                    }{% assign IsFuelStop = true %
+                    }{% break %
+                   1 }{% else %
+                    }{% assign IsFuelStop = false %
+                    }{% endif %
+                    }{% endfor %
+                    }{% for action in arrivalForm.TripActions %
+                    }{% if action.Category == 6 %
+                    }{% assign IsViaStop = true %
+                    }{% break %
+                    }{% else %
+                    }{% assign IsViaStop = false %
+                    }{% endif %
+                    }{% endfor %
+                    }{% for action in arrivalForm.TripActions %
+                    }{% if action.Category == 7 %
+                    }{% assign IsTCall = true %
+                    }{% break %
+                    }{% else %
+                    }{% assign IsTCall = false %
+                    }{% endif %
+                    }{% endfor %
+                    }{% if IsFreightPickup %
+                    } {% if IsTrailerHook %
+                    } {% assign Subject = "Hook" %
+                    } {% else %
+                    } {% assign Subject = "Pickup" %
+                    } {% endif %
+                    }  {% elsif IsFreightDelivery %
+                    } {% if IsTrailerUnhook %
+                    } {% assign Subject = "Drop" %
+                    } {% else %
+                    } {% assign Subject = "Unload" %
+                    } {% endif %
+                    } {% elsif IsFuelStop %
+                    }{% assign Subject = "Fuel" %
+                    }{% elsif IsViaStop %
+                    }{% assign Subject = "Via" %
+                    }{% elsif IsTCall %
+                    }{% assign Subject = "TCall" %
+                    } {% else %
+                    } {% assign Subject = "Relay" %
+                    }  {% endif %
+                    }{% endif %
+                    } {% assign stopStateAction = assignTripStop.Actions %
+                    } {% case stopStateAction %
+                    } {% when 1 %
+                    } {% assign stopState = 1  %
+                    } {% when 2 %
+                    } {% assign stopState = 2  %
+                    } {% else %
+                    } {% assign stopState = 0 %
+                    } {% endcase %
+                    }  {
+                        { separator
+                        }
+                    }  {
+                        "StopSequence": {% increment StopSequencecounter %
+                        },
+                        "StopId": "{{assignTripStop.StopNumber}}",
+                        "State": {
+                            {stopState
+                            }
+                        },
+                        "Subject": "{{Subject}}",
+                        "Location": {
+                            "LocationId": "{{assignTripStop.Location.Id}}",
+                            "Name": "{{assignTripStop.Location.Name}}",
+                            "Lat": {
+                                {assignTripStop.Location.Latitude | default: 0.0
+                                }
+                            },
+                            "Long": {
+                                {assignTripStop.Location.Longitude | default: 0.0
+                                }
+                            },
+                            "ArrivalRadiusMeters": {% assign arrivalGeofence = assignTripStop.ArrivalGeofences | where: "Type",
+                                10 | first %
+                            } {% if arrivalGeofence.Radius > 0 %
+                            } {
+                                { arrivalGeofence.Radius | divided_by: 3.281
+                                }
+                            } {% else %
+                            } 0.0 {% endif %
+                            },
+                            "DepartureRadiusMeters": {% assign departureGeofence = assignTripStop.DepartureGeofences| where: "Type",
+                                20 | first %
+                            }{% if departureGeofence.Radius > 0 %
+                            } {
+                                { departureGeofence.Radius / 3.281
+                                }
+                            } {% else %
+                            }0.0{% endif %
+                            },
+                            "Address1": "{{assignTripStop.Location.Address}}",
+                            "Address2": "{{assignTripStop.Location.Address2}}",
+                            "City": "{{assignTripStop.Location.City}}",
+                            "State": "{{assignTripStop.Location.State}}",
+                            "CountryCode": "{{assignTripStop.Location.CountryCode}}",
+                            "Zip": "{{assignTripStop.Location.Zip}}"
+                        },
+                        "EstimatedArrival": "{{assignTripStop.EstimatedArrival | date: "%Y-%m-%dT%H:%M:%S+00: 00"}}",
+                        {% assign EarliestArrivalMin = '1/1/1950 12: 00: 00 AM' | date: '%s' | minus: 0 %
+                        }{% assign EarliestArrival = assignTripStop.EarliestArrival | date: '%s' | minus: 0 %
+                        }{% assign LatestArrivalMax = '12/31/2049 11: 59: 00 PM' | date: '%s' | minus: 0 %
+                        }{% assign LatestArrival = assignTripStop.LatestArrival | date: '%s' | minus: 0 %
+                        }{% if EarliestArrival >= EarliestArrivalMin  and LatestArrival <= LatestArrivalMax %
+                        }"Appointment": {
+                            "Start": "{{assignTripStop.EarliestArrival | date: "%Y-%m-%dT%H:%M:%S+00: 00"}}",
+                            "End": "{{assignTripStop.LatestArrival | date: "%Y-%m-%dT%H:%M:%S+00: 00"}}"
+                        },
+                        {% endif %
+                        }"Actions": [
+                            {% if arrivalForm.StopInformation != null %
+                            } {% assign separator1 = "" %
+                            } {% for tripAction in arrivalForm.TripActions %
+                            } {% assign EnumTripActionCategoryHandle = tripAction.Category %
+                            } {% case EnumTripActionCategoryHandle %
+                            }   {% when 0 %
+                            }{% assign Category = "Uncategorized" %
+                            }        {% when 1 %
+                            }{% assign Category ="FreightPickup"  %
+                            }         {% when 2 %
+                            }{% assign Category ="FreightDelivery"  %
+                            }        {% when 3 %
+                            }{% assign Category ="TrailerHook"  %
+                            }         {% when 4 %
+                            }{% assign Category =  "TrailerUnhook"%
+                            }{% when 5 %
+                            }{% assign Category = "Fuel"%
+                            }{% when 6 %
+                            }{% assign Category = "Via"%
+                            }{% when 7 %
+                            }{% assign Category = "Tcall"%
+                            }{% endcase %
+                            }{
+                                { separator1
+                                }
+                            } {
+                                "Name": "{{tripAction.TmsLabel}}",
+                                "Details": "{{tripAction.Description}}",
+                                "Category": "{{Category}}"{% if arrivalForm.FreightInformation != null and tripAction.RelatedFreight > 0.0 %
+                                } {% assign tmsFreight = arrivalForm.FreightInformation | first %
+                                },
+                                "Freight": {
+                                    "FreightId": "{{tmsFreight.FreightNumber}}",
+                                    "OrderId": "{{tmsFreight.TripInformation.OrderHeader}}",
+                                    "Measurement": [
+                                        {% if tmsFreight.FreightMetrics != null %
+                                        } {% assign separator = "" %
+                                        } {% for FreightMetric in tmsFreight.FreightMetrics %
+                                        } {% if FreightMetric.Value > 0 %
+                                        }{% assign FreightProperty = FreightMetric.Property %
+                                        } {% case FreightProperty %
+                                        } {% when 1 %
+                                        } {% assign Property = "Count2"  %
+                                        } {% when 2 %
+                                        } {% assign Property = "Weight"  %
+                                        } {% when 3 %
+                                        } {% assign Property = "Volume"  %
+                                        } {% when 4 %
+                                        } {% assign Property = "Volume2"  %
+                                        } {% else %
+                                        } {% assign Property = "Count" %
+                                        } {% endcase %
+                                        }{
+                                            { separator
+                                            }
+                                        } {
+                                            "Type": "{{Property}}",
+                                            "Units": "{{FreightMetric.UnitOfMeasure}}",
+                                            "Value": "{{FreightMetric.Value}}"
+                                        } {% endif %
+                                        } {% assign separator = "," %
+                                        } {% endfor %
+                                        } {% else %
+                                        } {% capture MeasurementArray %
+                                        } {% if tmsFreight.Count > 0 %
+                                        }{
+                                            "Type": "Count",
+                                            "Units": "{{tmsFreight.CountUnit}}",
+                                            "Value": "{{tmsFreight.Count}}"
+                                        }+ {% endif %
+                                        } {% if tmsFreight.Count2 > 0 %
+                                        }{
+                                            "Type": "Count2",
+                                            "Units": "{{tmsFreight.Count2Unit}}",
+                                            "Value": "{{tmsFreight.Count2}}"
+                                        }+ {% endif %
+                                        } {% if tmsFreight.Volume > 0 %
+                                        }{
+                                            "Type": "Volume",
+                                            "Units": "{{tmsFreight.VolumeUnit}}",
+                                            "Value": "{{tmsFreight.Volume}}"
+                                        }+ {% endif %
+                                        } {% if tmsFreight.Volume2 > 0 %
+                                        }{
+                                            "Type": "Volume2",
+                                            "Units": "{{tmsFreight.Volume2Unit}}",
+                                            "Value": "{{tmsFreight.Volume2}}"
+                                        }+ {% endif %
+                                        } {% if tmsFreight.Weight > 0 %
+                                        }{
+                                            "Type": "Weight",
+                                            "Units": "{{tmsFreight.WeightUnit}}",
+                                            "Value": "{{tmsFreight.Weight}}"
+                                        } {% endif %
+                                        } {% endcapture %
+                                        } {% assign Measurements = MeasurementArray | split: '+' |  join: ','%
+                                        } {%if Measurements != null %
+                                        } {
+                                            {Measurements
+                                            }
+                                        } {% endif %
+                                        } {% endif %
+                                        }
+                                    ],
+                                    "Commodity": {
+                                        "Id": "{{tmsFreight.CommodityId}}",
+                                        "Description": "{{tmsFreight.CommodityName}}",
+                                        {% if arrivalForm.CommodityInformation != null %
+                                        } {% for commodityInformation in arrivalForm.CommodityInformation %
+                                        } {% if commodityInformation.CommodityId == tmsFreight.CommodityId %
+                                        } {% if commodityInformation.HazardousClass != "UNK" or commodityInformation.HazardousClass != "Unknown" or commodityInformation.HazardousClass != "Unk" %
+                                        } {% assign HazardousClass =  commodityInformation.HazardousClass %
+                                        } {% assign HazardousNumber =  commodityInformation.HazardousNumber %
+                                        }  {% endif %
+                                        } {%endif%
+                                        } {% endfor %
+                                        } {% endif %
+                                        } "Hazard": {
+                                            "Class": "{{HazardousClass}}",
+                                            "Number": "{{HazardousNumber}}"
+                                        }
+                                    }
+                                } {% endif %
+                                },
+                                "CustomElements": {
+                                    "TaskId": "{{arrivalForm.FormId | replace: 'taskComplete.', '' }}"  {% if SEALValue!= null %
+                                    },
+                                    "Seal": "{{SEALValue}}"{% endif %
+                                    }  {% if BOLValue != null %
+                                    },
+                                    "BillOfLading": "{{BOLValue}}"{% endif %
+                                    },
+                                    "etaDateTime": "{{arrivalForm.StopInformation.NextStopEstimatedTimeOfArrival | default: "0001-01-01T00: 00: 00+00: 00" }}"{% if arrivalForm.FreightInformation != null %
+                                    }   {% assign tmsFreight = arrivalForm.FreightInformation | first %
+                                    }   {% for FreightMetric in tmsFreight.FreightMetrics %
+                                    }  {% assign FreightMetricEnumHandle = FreightMetric.Property %
+                                    }   {% case FreightMetricEnumHandle %
+                                    }  {% when 0 %
+                                    }  {% assign FreightMetricProperty = "Count" %
+                                    }  {% when 1 %
+                                    }  {% assign FreightMetricProperty ="Count2"  %
+                                    }  {% when 2 %
+                                    }  {% assign FreightMetricProperty ="Weight"  %
+                                    }  {% when 3 %
+                                    }  {% assign FreightMetricProperty ="Volume"  %
+                                    }  {% when 4 %
+                                    }  {% assign FreightMetricProperty =  "Volume2" %
+                                    }  {% endcase %
+                                    }   {% if FreightMetricProperty == "Weight" %
+                                    }  {% assign WeightValue = FreightMetric.Value %
+                                    }  {% endif %
+                                    }   {% if FreightMetricProperty == "Count" %
+                                    }  {% assign PiecesValue = FreightMetric.Value %
+                                    } {% endif %
+                                    }  {% endfor %
+                                    }  {% endif %
+                                    }  {% if PiecesValue != null %
+                                    },
+                                    "Pieces": "{{PiecesValue}}"{% endif %
+                                    }  {% if WeightValue != null %
+                                    },
+                                    "Weight": "{{WeightValue}}"{% endif %
+                                    }  {% if Category == "TrailerHook" %
+                                    } {% if arrivalForm.TripInformation != null %
+                                    } {% for asset in arrivalForm.TripInformation.Assets %
+                                    } {% if asset.Type == 3 %
+                                    } {% assign CurrOrPickedTrailerValue = asset.Id %
+                                    } {% endif %
+                                    } {% endfor %
+                                    } {% endif %
+                                    } {% if CurrOrPickedTrailerValue != null %
+                                    }"CurrOrPickedTrailer": "{{CurrOrPickedTrailerValue}}"{% endif %
+                                    } {% endif %
+                                    }
+                                }
+                            } {% assign separator1 = "," %
+                            } {% endfor %
+                            } {%endif%
+                            }
+                        ],
+                        "ReferenceNumbers": [
+                            {
+                                {ReferenceNumbers
+                                }
+                            }
+                        ],
+                        "Remarks": [
+                            {% if arrivalForm.NoteInformation != null %
+                            } {% assign separator = "" %
+                            } {% for note in arrivalForm.NoteInformation %
+                            }{
+                                { separator
+                                }
+                            }{% if note.KeyType == 3 %
+                            }{% if note.Key == assignTripStop.StopNumber or note.Key != "Unknown" or note.Key != "Unk" %
+                            }{
+                                "Label": "{{note.TypeDescription}}",
+                                "Key": "{{note.Key}}",
+                                "Value": "{{note.Note}}"
+                            }{% elsif note.KeyType == 10 %
+                            }{% if note.Key == assignTripStop.Location.Id or note.Key != "Unknown" or note.Key != "Unk" %
+                            }{
+                                "Label": "{{note.TypeDescription}}",
+                                "Key": "{{note.Key}}",
+                                "Value": "{{note.Note}}"
+                            }{% endif %
+                            }{% endif %
+                            }{% elsif note.KeyType == 10 %
+                            }{% if note.Key == assignTripStop.Location.Id or note.Key != "Unknown" or note.Key != "Unk" %
+                            }{
+                                "Label": "{{note.TypeDescription}}",
+                                "Key": "{{note.Key}}",
+                                "Value": "{{note.Note}}"
+                            }{% endif %
+                            }{% endif %
+                            } {% assign separator = "," %
+                            } {% endfor %
+                            } {% endif %
+                            }
+                        ]
+                    }{% assign separator = "," %
+                    }{% endfor %
+                    }
+                ],
+                "TripType": {
+                    { input.AssignTrip.TripType | default: 0
+                    }
+                },
+                {% capture CustomElementsArray %
+                }{% assign separator = "" %
+                }[
+                    {% for assignTripStop in input.AssignTrip.stops %
+                    } {
+                        { separator
+                        }
+                    } "Stop_{{assignTripStop.StopNumber}}": "{{assignTripStop.Location.City}},{{assignTripStop.Location.State}}"{% assign separator = "," %
+                    }{% endfor %
+                    }
+                ]{% endcapture %
+                }"CustomElements": {
+                    {CustomElementsArray | replace: "[",
+                        "{" | replace: "]",
+                        "}"
+                    }
+                }
+            }
+        }
+    ]
+}

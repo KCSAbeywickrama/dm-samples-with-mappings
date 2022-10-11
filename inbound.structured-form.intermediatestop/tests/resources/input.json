@@ -1,0 +1,145 @@
+{
+    "Assets": [
+        {
+            "Type": 2,
+            "Id": "shdrv2"
+        },
+        {
+            "Type": 1,
+            "Id": "CAN002"
+        }
+    ],
+    "FormId": "taskComplete.intermediateStop",
+    "CreateDate": "2021-11-19T22:32:14+00:00",
+    "Content": {
+        "DriverId": "shdrv2",
+        "MobileID": "7788864985",
+        "IntEventType": "taskComplete",
+        "Data": {
+            "taskData": {
+                "startedAtUtc": "2021-11-19T22:31:47.681+00:00",
+                "startedLocation": {
+                    "lat": 49.2802415,
+                    "lon": -123.1196632
+                },
+                "odometer": {},
+                "startedDriverId": "shdrv2",
+                "isSmart": true,
+                "smartFormData": {
+                    "driverEnteredStopId": "S222",
+                    "bol": "123",
+                    "weight": "4",
+                    "pieces": "5",
+                    "seal": "666",
+                    "etaDateTime": "2021-11-19T22:31:47.825+00:00",
+                    "droppedTrailer": "Tt1",
+                    "pickupTrailer": "Tt2"
+                },
+                "smartForm": {
+                    "id": "intermediateStop",
+                    "version": 0,
+                    "formType": "i",
+                    "schema": {
+                        "title": "IntermediateStop",
+                        "fields": {
+                            "driverEnteredStopId": {
+                                "ctype": "matq-input",
+                                "dtype": "text",
+                                "attributes": {
+                                    "required": true,
+                                    "label": "StopId"
+                                }
+                            },
+                            "bol": {
+                                "ctype": "matq-input",
+                                "dtype": "text",
+                                "attributes": {
+                                    "required": true,
+                                    "label": "BOL"
+                                }
+                            },
+                            "weight": {
+                                "ctype": "matq-input",
+                                "dtype": "number",
+                                "attributes": {
+                                    "required": true,
+                                    "label": "Weight",
+                                    "type": "number"
+                                }
+                            },
+                            "pieces": {
+                                "ctype": "matq-input",
+                                "dtype": "number",
+                                "attributes": {
+                                    "required": true,
+                                    "label": "Pieces",
+                                    "type": "number"
+                                }
+                            },
+                            "seal": {
+                                "ctype": "matq-input",
+                                "dtype": "text",
+                                "attributes": {
+                                    "required": false,
+                                    "label": "Seal"
+                                }
+                            },
+                            "etaDateTime": {
+                                "ctype": "matq-date-time",
+                                "dtype": "text",
+                                "attributes": {
+                                    "required": true,
+                                    "label": "ETA",
+                                    "dateLabel": "Date",
+                                    "timeLabel": "Time"
+                                }
+                            },
+                            "droppedTrailer": {
+                                "ctype": "matq-input",
+                                "dtype": "text",
+                                "attributes": {
+                                    "required": false,
+                                    "label": "Dropped Trailer"
+                                }
+                            },
+                            "pickupTrailer": {
+                                "ctype": "matq-input",
+                                "dtype": "text",
+                                "attributes": {
+                                    "required": false,
+                                    "label": "Pickup Trailer"
+                                }
+                            }
+                        }
+                    }
+                },
+                "completedAtUtc": "2021-11-19T22:32:14.734+00:00",
+                "completedLocation": {
+                    "lat": 49.279939,
+                    "lon": -123.1204173
+                },
+                "completedDriverId": "shdrv2",
+                "baseTaskType": "smartForm",
+                "isFirstTask": false,
+                "isLastTask": false
+            },
+            "stopKey": "stop::2",
+            "tripKey": "trip::8440",
+            "stopExternalKey": "v2:101:101:3131:3435:True",
+            "tripExternalKey": "v1:101:101:3131:True:True"
+        },
+        "triggeredAtUtc": "2021-11-19T22:32:14.779+00:00",
+        "_id": "619825f10f88e74da30865ff",
+        "TransId": "637729579403568848",
+        "TenantId": "608544124",
+        "SubType": "intermediateStop",
+        "ProcessedAtUtc": "2021-11-19T22:32:20.3570749+00:00",
+        "TractorId": "CAN002",
+        "ConnectedTractorId": null
+    },
+    "MessageProperties": {
+        "EventType": "com.trimble.transportation.telematics.inbound.structured-form",
+        "AuditId": "d25cea60-e3a1-447e-ab7f-e760009becfc",
+        "MessageId": "7a737486-cd7c-46dd-bc84-e06b0c4dcd52"
+    }
+}

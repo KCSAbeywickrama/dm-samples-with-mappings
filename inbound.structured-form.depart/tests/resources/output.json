@@ -1,0 +1,73 @@
+{
+    "dtos": [
+        {
+            "type": "com.trimble.transportation.telematics.inbound.structured-form",
+            "data": {
+                "MessageGuid": "c4c530c7-c5bd-49fa-8be3-e3f7828b0ee0",
+                "ParentMessageGuid": "b6ba7841-830d-4c46-b150-5b67132e34f1",
+                "MessageContentType": "com.trimble.transportation.telematics.inbound.structured-form",
+                "MessageContent": {
+                    "FormId": "taskComplete.depart",
+                    "Content": [],
+                    "Coordinates": {
+                        "Latitude": 35.8480714,
+                        "Longitude": -78.8980228
+                    },
+                    "Assets": [
+                        {
+                            "Type": 2,
+                            "Id": "SRIDRV",
+                            "Confirmed": false
+                        },
+                        {
+                            "Type": 1,
+                            "Id": "SRITRK",
+                            "Confirmed": false
+                        }
+                    ],
+                    "CreateDate": "2022-01-10T17:12:49+00:00"
+                }
+            }
+        },
+        {
+            "type": "com.trimble.transportation.telematics.inbound.trip-status",
+            "data": {
+                "MessageGuid": "7c035c4c-db5c-af94-3eb8-0ee0b8287f3e",
+                "ParentMessageGuid": "b6ba7841-830d-4c46-b150-5b67132e34f1",
+                "MessageContentType": "com.trimble.transportation.telematics.inbound.trip-status",
+                "MessageContent": {
+                    "TripStatusType": 4,
+                    "TripStatusReason": 0,
+                    "Location": {
+                        "Latitude": 35.8480714,
+                        "Longitude": -78.8980228
+                    },
+                    "Odometer": 0.0,
+                    "TripInformation": {
+                        "TripName": null,
+                        "Move": null,
+                        "Leg": 12007,
+                        "Stop": 90,
+                        "OrderHeader": 0.0,
+                        "Assets": [
+                            {
+                                "Type": 2,
+                                "Id": "SRIDRV",
+                                "Confirmed": false
+                            },
+                            {
+                                "Type": 1,
+                                "Id": "SRITRK",
+                                "Confirmed": false
+                            }
+                        ],
+                        "AdditionalDataElements": []
+                    },
+                    "HeaderInformation": {
+                        "CreateDateUtc": "2022-01-10T17:12:49+00:00"
+                    }
+                }
+            }
+        }
+    ]
+}

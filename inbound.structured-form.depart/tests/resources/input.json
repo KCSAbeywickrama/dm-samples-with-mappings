@@ -1,0 +1,83 @@
+{
+    "Assets": [
+        {
+            "Type": 2,
+            "Id": "sri"
+        },
+        {
+            "Type": 1,
+            "Id": "SRITRK"
+        }
+    ],
+    "FormId": "taskComplete.depart",
+    "CreateDate": "2022-01-10T17:12:49+00:00",
+    "Content": {
+        "DriverId": "sri",
+        "MobileID": "5135800150",
+        "IntEventType": "taskComplete",
+        "Data": {
+            "taskData": {
+                "startedAtUtc": "2022-01-10T17:12:45.199Z",
+                "startedLocation": {
+                    "lat": 35.8480714,
+                    "lon": -78.8980228
+                },
+                "odometer": {},
+                "startedDriverId": "sri",
+                "starRating": 0,
+                "trailerNumbers": {},
+                "departureAtUtc": "2022-01-10T17:12:45.603Z",
+                "confirmDepartureAtUtc": "2022-01-10T17:12:45.603Z",
+                "ratingComments": "",
+                "nextPlannedStop": "N/A",
+                "appointmentWindow": "",
+                "stopName": "TARGET SMYRNA",
+                "hosStatus": {
+                    "currentStatus": "onDutyNotDriving",
+                    "currentSpecialDrivingCondition": "none",
+                    "updatedStatus": null,
+                    "updatedSpecialDrivingCondition": null,
+                    "logNotation": null
+                },
+                "hiddenValue": "",
+                "nextStopAddr": {
+                    "addr1": "",
+                    "addr2": "",
+                    "city": "",
+                    "country": "",
+                    "state": "",
+                    "zip": ""
+                },
+                "nextStopEtaUtc": "",
+                "nextStopEtaDisplay": "",
+                "isNextStopAvailable": false,
+                "completedAtUtc": "2022-01-10T17:12:48.917Z",
+                "completedLocation": {
+                    "lat": 35.8480714,
+                    "lon": -78.8980228
+                },
+                "completedDriverId": "sri",
+                "isLastTask": true,
+                "baseTaskType": "depart",
+                "isFirstTask": false
+            },
+            "stopKey": "stop::90",
+            "tripKey": "trip::12007",
+            "stopExternalKey": "v2:101:101:3338:3653:True",
+            "tripExternalKey": "v1:101:101:3338:True:True"
+        },
+        "triggeredAtUtc": "2022-01-10T17:12:49.102Z",
+        "_id": "61dc6914a58cf50f2f50066a",
+        "TransId": "637774315731777538",
+        "TenantId": "608544124",
+        "SubType": "depart",
+        "ProcessedAtUtc": "2022-01-10T17:12:53.1778929Z",
+        "TractorId": "SRITRK",
+        "ConnectedTractorId": null
+    },
+    "MessageProperties": {
+        "EventType": "com.trimble.transportation.telematics.inbound.structured-form",
+        "AuditId": "b6ba7841-830d-4c46-b150-5b67132e34f1",
+        "MessageId": "c4c530c7-c5bd-49fa-8be3-e3f7828b0ee0"
+    }
+}

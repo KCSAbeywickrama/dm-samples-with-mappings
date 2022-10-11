@@ -1,0 +1,154 @@
+{
+    "dtos": [
+        {
+            "type": "com.trimble.transportation.telematics.outbound.assign-trip",
+            "data": {
+                "Description": "00066948 01",
+                "TripId": "31303",
+                "Assets": [
+                    {
+                        "Type": 1,
+                        "Id": "SAMSUNG",
+                        "Confirmed": true
+                    },
+                    {
+                        "Type": 2,
+                        "Id": "JPSuburban",
+                        "Confirmed": true
+                    }
+                ],
+                "Orders": [
+                    {
+                        "OrderId": "66948",
+                        "OrderLabel": "00066948",
+                        "Remarks": [],
+                        "ReferenceNumbers": [],
+                        "Classifications": []
+                    }
+                ],
+                "Stops": [
+                    {
+                        "StopSequence": 0,
+                        "StopId": "1",
+                        "State": 0,
+                        "Subject": "Pickup",
+                        "Location": {
+                            "LocationId": "CUSJON",
+                            "Name": "JON CUSTOMER",
+                            "Lat": 35.52387,
+                            "Long": -86.433736,
+                            "ArrivalRadiusMeters": 482.77964035355074672355989028,
+                            "DepartureRadiusMeters": 804.6327339225845778725998171,
+                            "Address1": "103 EQUESTRIAN WAY",
+                            "Address2": "",
+                            "City": "SHELBYVILLE",
+                            "State": "TN",
+                            "CountryCode": "USA",
+                            "Zip": "37160"
+                        },
+                        "EstimatedArrival": "2021-06-01T16:00:00+00:00",
+                        "Appointment": {
+                            "Start": "2021-06-01T16:00:00+00:00",
+                            "End": "2021-06-01T16:00:00+00:00"
+                        },
+                        "Actions": [
+                            {
+                                "Name": "",
+                                "Details": "",
+                                "Category": "FreightPickup",
+                                "CustomElements": {
+                                    "TaskId": "loadedCall",
+                                    "etaDateTime": "0001-01-01T00:00:00+00:00"
+                                }
+                            }
+                        ],
+                        "ReferenceNumbers": [],
+                        "Remarks": []
+                    },
+                    {
+                        "StopSequence": 1,
+                        "StopId": "2",
+                        "State": 0,
+                        "Subject": "Pickup",
+                        "Location": {
+                            "LocationId": "SMSHM",
+                            "Name": "SCOTT HOME",
+                            "Lat": 35.790367,
+                            "Long": -86.334955,
+                            "ArrivalRadiusMeters": 482.77964035355074672355989028,
+                            "DepartureRadiusMeters": 804.6327339225845778725998171,
+                            "Address1": "2917 PELLAS PLACE",
+                            "Address2": "",
+                            "City": "MURFREESBORO",
+                            "State": "TN",
+                            "CountryCode": "USA",
+                            "Zip": "37127"
+                        },
+                        "EstimatedArrival": "2021-06-01T17:30:00+00:00",
+                        "Appointment": {
+                            "Start": "2021-06-01T17:30:00+00:00",
+                            "End": "2021-06-01T17:30:00+00:00"
+                        },
+                        "Actions": [
+                            {
+                                "Name": "",
+                                "Details": "",
+                                "Category": "FreightPickup",
+                                "CustomElements": {
+                                    "TaskId": "intermediateStop",
+                                    "etaDateTime": "0001-01-01T00:00:00+00:00"
+                                }
+                            }
+                        ],
+                        "ReferenceNumbers": [],
+                        "Remarks": []
+                    },
+                    {
+                        "StopSequence": 2,
+                        "StopId": "90",
+                        "State": 0,
+                        "Subject": "Unload",
+                        "Location": {
+                            "LocationId": "TARGT",
+                            "Name": "TARGET SMYRNA",
+                            "Lat": 35.978458,
+                            "Long": -86.573333,
+                            "ArrivalRadiusMeters": 482.77964035355074672355989028,
+                            "DepartureRadiusMeters": 804.6327339225845778725998171,
+                            "Address1": "803 INDUSTRIAL BOULEVARD",
+                            "Address2": "",
+                            "City": "SMYRNA",
+                            "State": "TN",
+                            "CountryCode": "USA",
+                            "Zip": "37167"
+                        },
+                        "EstimatedArrival": "2021-06-01T19:00:00+00:00",
+                        "Appointment": {
+                            "Start": "2021-06-01T19:00:00+00:00",
+                            "End": "2021-06-01T19:00:00+00:00"
+                        },
+                        "Actions": [
+                            {
+                                "Name": "",
+                                "Details": "",
+                                "Category": "FreightDelivery",
+                                "CustomElements": {
+                                    "TaskId": "emptyCall",
+                                    "etaDateTime": "0001-01-01T00:00:00+00:00"
+                                }
+                            }
+                        ],
+                        "ReferenceNumbers": [],
+                        "Remarks": []
+                    }
+                ],
+                "TripType": 2,
+                "CustomElements": {
+                    "Stop_1": "SHELBYVILLE,TN",
+                    "Stop_2": "MURFREESBORO,TN",
+                    "Stop_90": "SMYRNA,TN"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+{
+    "Assets": [
+        {
+            "Type": 2,
+            "Id": "shdrv2"
+        },
+        {
+            "Type": 1,
+            "Id": "CAN002"
+        }
+    ],
+    "FormId": "taskComplete.arrive",
+    "CreateDate": "2021-11-19T22:29:51+00:00",
+    "Content": {
+        "DriverId": "shdrv2",
+        "MobileID": "7788864985",
+        "IntEventType": "taskComplete",
+        "Data": {
+            "taskData": {
+                "startedAtUtc": "2021-11-19T22:29:48.04+00:00",
+                "startedLocation": {
+                    "lat": 49.2799148,
+                    "lon": -123.1204566
+                },
+                "odometer": {},
+                "startedDriverId": "shdrv2",
+                "arrivedAtText": "You have arrived at JON CUSTOMER at 2021-11-19, 2:29 p.m..",
+                "arrivedAtUtc": "2021-11-19T22:29:48.102+00:00",
+                "confirmArrivedAtUtc": "2021-11-19T22:29:48.102+00:00",
+                "customLocation": null,
+                "hosStatus": {
+                    "currentStatus": "onDutyNotDriving",
+                    "currentSpecialDrivingCondition": "none",
+                    "updatedStatus": null,
+                    "updatedSpecialDrivingCondition": null,
+                    "logNotation": "Arrived at Stop"
+                },
+                "completedAtUtc": "2021-11-19T22:29:51.396+00:00",
+                "completedLocation": {
+                    "lat": 49.2798961,
+                    "lon": -123.1203094
+                },
+                "completedDriverId": "shdrv2",
+                "baseTaskType": "arrive",
+                "isFirstTask": true,
+                "isLastTask": false
+            },
+            "stopKey": "stop::1",
+            "tripKey": "trip::8440",
+            "stopExternalKey": "v2:101:101:3131:3434:True",
+            "tripExternalKey": "v1:101:101:3131:True:True"
+        },
+        "triggeredAtUtc": "2021-11-19T22:29:51.454+00:00",
+        "_id": "61982561e14ff1494a56ec19",
+        "TransId": "637729577939347667",
+        "TenantId": "608544124",
+        "SubType": "arrive",
+        "ProcessedAtUtc": "2021-11-19T22:29:53.9348746+00:00",
+        "TractorId": "CAN002",
+        "ConnectedTractorId": null
+    },
+    "MessageProperties": {
+        "EventType": "com.trimble.transportation.telematics.inbound.structured-form",
+        "AuditId": "a263fe77-6d3e-4094-bc0a-d5bd4b31603e",
+        "MessageId": "d422afe2-04b8-478e-bb15-1ecb3ca4cd3f"
+    }
+}

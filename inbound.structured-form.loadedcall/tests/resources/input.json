@@ -1,0 +1,136 @@
+{
+    "Assets": [
+        {
+            "Type": 2,
+            "Id": "shdrv2"
+        },
+        {
+            "Type": 1,
+            "Id": "CAN002"
+        }
+    ],
+    "FormId": "taskComplete.loadedCall",
+    "CreateDate": "2021-11-19T22:30:17+00:00",
+    "Content": {
+        "DriverId": "shdrv2",
+        "MobileID": "7788864985",
+        "IntEventType": "taskComplete",
+        "Data": {
+            "taskData": {
+                "startedAtUtc": "2021-11-19T22:29:54.703+00:00",
+                "startedLocation": {
+                    "lat": 49.2798961,
+                    "lon": -123.1203094
+                },
+                "odometer": {},
+                "startedDriverId": "shdrv2",
+                "isSmart": true,
+                "smartFormData": {
+                    "bol": "124",
+                    "weight": "4",
+                    "pieces": "5",
+                    "seal": "666",
+                    "etaDateTime": "2021-11-19T22:29:54.853+00:00",
+                    "droppedTrailer": "",
+                    "pickupTrailer": "Tt1"
+                },
+                "smartForm": {
+                    "id": "loadedCall",
+                    "version": 0,
+                    "formType": "i",
+                    "schema": {
+                        "title": "LoadedCall",
+                        "fields": {
+                            "bol": {
+                                "ctype": "matq-input",
+                                "dtype": "text",
+                                "attributes": {
+                                    "required": true,
+                                    "label": "BOL"
+                                }
+                            },
+                            "weight": {
+                                "ctype": "matq-input",
+                                "dtype": "number",
+                                "attributes": {
+                                    "required": true,
+                                    "label": "Weight",
+                                    "type": "number"
+                                }
+                            },
+                            "pieces": {
+                                "ctype": "matq-input",
+                                "dtype": "number",
+                                "attributes": {
+                                    "required": true,
+                                    "label": "Pieces",
+                                    "type": "number"
+                                }
+                            },
+                            "seal": {
+                                "ctype": "matq-input",
+                                "dtype": "text",
+                                "attributes": {
+                                    "required": false,
+                                    "label": "Seal"
+                                }
+                            },
+                            "etaDateTime": {
+                                "ctype": "matq-date-time",
+                                "dtype": "text",
+                                "attributes": {
+                                    "required": true,
+                                    "label": "ETA",
+                                    "dateLabel": "Date",
+                                    "timeLabel": "Time"
+                                }
+                            },
+                            "droppedTrailer": {
+                                "ctype": "matq-input",
+                                "dtype": "text",
+                                "attributes": {
+                                    "required": false,
+                                    "label": "Dropped Trailer"
+                                }
+                            },
+                            "pickupTrailer": {
+                                "ctype": "matq-input",
+                                "dtype": "text",
+                                "attributes": {
+                                    "required": false,
+                                    "label": "Pickup Trailer"
+                                }
+                            }
+                        }
+                    }
+                },
+                "completedAtUtc": "2021-11-19T22:30:17.475+00:00",
+                "completedLocation": {
+                    "lat": 49.2798551,
+                    "lon": -123.1204322
+                },
+                "completedDriverId": "shdrv2",
+                "baseTaskType": "smartForm",
+                "isFirstTask": false,
+                "isLastTask": false
+            },
+            "stopKey": "stop::1",
+            "tripKey": "trip::8440",
+            "stopExternalKey": "v2:101:101:3131:3434:True",
+            "tripExternalKey": "v1:101:101:3131:True:True"
+        },
+        "triggeredAtUtc": "2021-11-19T22:30:17.533+00:00",
+        "_id": "6198257ba3e54d4da5ebb49d",
+        "TransId": "637729578199299118",
+        "TenantId": "608544124",
+        "SubType": "loadedCall",
+        "ProcessedAtUtc": "2021-11-19T22:30:19.9301025+00:00",
+        "TractorId": "CAN002",
+        "ConnectedTractorId": null
+    },
+    "MessageProperties": {
+        "EventType": "com.trimble.transportation.telematics.inbound.structured-form",
+        "AuditId": "0cf30ca4-8d32-48b1-aca3-05c9cb9c6126",
+        "MessageId": "2d012b5a-c424-46e8-97e3-7fd5e2717ff1"
+    }
+}

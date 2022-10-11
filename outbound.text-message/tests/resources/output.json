@@ -1,0 +1,25 @@
+{
+    "dtos": [
+        {
+            "type": "com.trimble.transportation.telematics.outbound.text-message",
+            "data": {
+                "Assets": [
+                    {
+                        "Type": 1,
+                        "Id": "SRITRK",
+                        "Confirmed": true
+                    },
+                    {
+                        "Type": 2,
+                        "Id": "sri",
+                        "Confirmed": true
+                    }
+                ],
+                "CreateDate": "2022-01-06T19:46:10+00:00",
+                "Content": "CUSTOMER: ANGELA'S GREENHOUSErnADDRESS: 1125 ELM AVErnADDR2:rnCITY: TORONTOrnST: ONrnZIP: ONrnPHONE: 654/651-2212rnTHIS IS A TEST OF DIRECTIONS THIS IS THE SECOND LINE THIS IS THE THIRD LINE",
+                "Subject": "DIRECTIONS",
+                "MessageId": ""
+            }
+        }
+    ]
+}

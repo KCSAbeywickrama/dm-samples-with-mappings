@@ -1,0 +1,164 @@
+{
+    "$schema": "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+    "id": "http://wso2jsonschema.org",
+    "type": "object",
+    "properties": {
+        "dtos": {
+            "id": "http://wso2jsonschema.org/dtos",
+            "type": "array",
+            "items": [
+                {
+                    "id": "http://wso2jsonschema.org/dtos/0",
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "id": "http://wso2jsonschema.org/dtos/0/type",
+                            "type": "string"
+                        },
+                        "data": {
+                            "id": "http://wso2jsonschema.org/dtos/0/data",
+                            "type": "object",
+                            "properties": {
+                                "MessageGuid": {
+                                    "id": "http://wso2jsonschema.org/dtos/0/data/MessageGuid",
+                                    "type": "string"
+                                },
+                                "ParentMessageGuid": {
+                                    "id": "http://wso2jsonschema.org/dtos/0/data/ParentMessageGuid",
+                                    "type": "string"
+                                },
+                                "MessageContentType": {
+                                    "id": "http://wso2jsonschema.org/dtos/0/data/MessageContentType",
+                                    "type": "string"
+                                },
+                                "MessageContent": {
+                                    "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent",
+                                    "type": "object",
+                                    "properties": {
+                                        "EventId": {
+                                            "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/EventId",
+                                            "type": "string"
+                                        },
+                                        "OriginEventId": {
+                                            "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/OriginEventId",
+                                            "type": "string"
+                                        },
+                                        "EventType": {
+                                            "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/EventType",
+                                            "type": "number"
+                                        },
+                                        "EventCode": {
+                                            "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/EventCode",
+                                            "type": "number"
+                                        },
+                                        "EventDate": {
+                                            "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/EventDate",
+                                            "type": "string"
+                                        },
+                                        "Comments": {
+                                            "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/Comments",
+                                            "type": "string"
+                                        },
+                                        "HosRuleSet": {
+                                            "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/HosRuleSet",
+                                            "type": "string"
+                                        },
+                                        "GpsPosition": {
+                                            "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/GpsPosition",
+                                            "type": "string"
+                                        },
+                                        "Odometer": {
+                                            "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/Odometer",
+                                            "type": "string"
+                                        },
+                                        "Malfunctions": {
+                                            "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/Malfunctions",
+                                            "type": "string"
+                                        },
+                                        "EditDateTime": {
+                                            "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/EditDateTime",
+                                            "type": "string"
+                                        },
+                                        "EditByUser": {
+                                            "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/EditByUser",
+                                            "type": "string"
+                                        },
+                                        "AdditionalDataElements": {
+                                            "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/AdditionalDataElements",
+                                            "type": "string"
+                                        },
+                                        "TripInformation": {
+                                            "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/TripInformation",
+                                            "type": "object",
+                                            "properties": {
+                                                "TripName": {
+                                                    "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/TripInformation/TripName",
+                                                    "type": "string"
+                                                },
+                                                "Move": {
+                                                    "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/TripInformation/Move",
+                                                    "type": "number"
+                                                },
+                                                "Leg": {
+                                                    "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/TripInformation/Leg",
+                                                    "type": "number"
+                                                },
+                                                "Stop": {
+                                                    "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/TripInformation/Stop",
+                                                    "type": "number"
+                                                },
+                                                "OrderHeader": {
+                                                    "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/TripInformation/OrderHeader",
+                                                    "type": "number"
+                                                },
+                                                "Assets": {
+                                                    "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/TripInformation/Assets",
+                                                    "type": "array",
+                                                    "items": [
+                                                        {
+                                                            "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/TripInformation/Assets/0",
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "Type": {
+                                                                    "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/TripInformation/Assets/0/Type",
+                                                                    "type": "number"
+                                                                },
+                                                                "Id": {
+                                                                    "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/TripInformation/Assets/0/Id",
+                                                                    "type": "string"
+                                                                },
+                                                                "Confirmed": {
+                                                                    "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/TripInformation/Assets/0/Confirmed",
+                                                                    "type": "boolean"
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "AdditionalDataElements": {
+                                                    "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/TripInformation/AdditionalDataElements",
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "HeaderInformation": {
+                                            "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/HeaderInformation",
+                                            "type": "object",
+                                            "properties": {
+                                                "CreateDateUtc": {
+                                                    "id": "http://wso2jsonschema.org/dtos/0/data/MessageContent/HeaderInformation/CreateDateUtc",
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "title": "root"
+}

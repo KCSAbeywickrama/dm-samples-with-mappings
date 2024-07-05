@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <api context="/" name="api" xmlns="http://ws.apache.org/ns/synapse">
+        <resource methods="GET" uri-template="/resource">
+            <inSequence>
+            <datamapper config="gov:/datamapper/dm1/dm1.dmc" inputSchema="gov:/datamapper/dm1/dm1_inputSchema.json" inputType="JSON" outputSchema="gov:/datamapper/dm1/dm1_outputSchema.json" outputType="JSON" />
+            </inSequence>
+            <faultSequence>
+            </faultSequence>
+        </resource>
+    </api>

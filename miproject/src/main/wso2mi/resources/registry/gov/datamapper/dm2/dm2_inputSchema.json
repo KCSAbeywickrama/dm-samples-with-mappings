@@ -1,0 +1,174 @@
+{
+    "$schema": "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+    "id": "http://wso2jsonschema.org",
+    "type": "object",
+    "properties": {
+        "input": {
+            "id": "http://wso2jsonschema.org/input",
+            "type": "array",
+            "items": [
+                {
+                    "id": "http://wso2jsonschema.org/input/0",
+                    "type": "object",
+                    "properties": {
+                        "Assets": {
+                            "id": "http://wso2jsonschema.org/input/0/Assets",
+                            "type": "array",
+                            "items": [
+                                {
+                                    "id": "http://wso2jsonschema.org/input/0/Assets/0",
+                                    "type": "object",
+                                    "properties": {
+                                        "Type": {
+                                            "id": "http://wso2jsonschema.org/input/0/Assets/0/Type",
+                                            "type": "number"
+                                        },
+                                        "Id": {
+                                            "id": "http://wso2jsonschema.org/input/0/Assets/0/Id",
+                                            "type": "string"
+                                        },
+                                        "Confirmed": {
+                                            "id": "http://wso2jsonschema.org/input/0/Assets/0/Confirmed",
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "CreateDate": {
+                            "id": "http://wso2jsonschema.org/input/0/CreateDate",
+                            "type": "string"
+                        },
+                        "ContentType": {
+                            "id": "http://wso2jsonschema.org/input/0/ContentType",
+                            "type": "string"
+                        },
+                        "Content": {
+                            "id": "http://wso2jsonschema.org/input/0/Content",
+                            "type": "object",
+                            "properties": {
+                                "Metrics": {
+                                    "id": "http://wso2jsonschema.org/input/0/Content/Metrics",
+                                    "type": "object",
+                                    "properties": {
+                                        "DayDrive": {
+                                            "id": "http://wso2jsonschema.org/input/0/Content/Metrics/DayDrive",
+                                            "type": "number"
+                                        },
+                                        "DayOnDuty": {
+                                            "id": "http://wso2jsonschema.org/input/0/Content/Metrics/DayOnDuty",
+                                            "type": "number"
+                                        },
+                                        "DayOffDuty": {
+                                            "id": "http://wso2jsonschema.org/input/0/Content/Metrics/DayOffDuty",
+                                            "type": "number"
+                                        },
+                                        "DaySleeperBerth": {
+                                            "id": "http://wso2jsonschema.org/input/0/Content/Metrics/DaySleeperBerth",
+                                            "type": "number"
+                                        }
+                                    }
+                                },
+                                "AdditionalDataElements": {
+                                    "id": "http://wso2jsonschema.org/input/0/Content/AdditionalDataElements",
+                                    "type": "array",
+                                    "items": [
+                                        {
+                                            "id": "http://wso2jsonschema.org/input/0/Content/AdditionalDataElements/0",
+                                            "type": "object",
+                                            "properties": {
+                                                "Label": {
+                                                    "id": "http://wso2jsonschema.org/input/0/Content/AdditionalDataElements/0/Label",
+                                                    "type": "string"
+                                                },
+                                                "Value": {
+                                                    "id": "http://wso2jsonschema.org/input/0/Content/AdditionalDataElements/0/Value",
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "TripInformation": {
+                                    "id": "http://wso2jsonschema.org/input/0/Content/TripInformation",
+                                    "type": "object",
+                                    "properties": {
+                                        "TripName": {
+                                            "id": "http://wso2jsonschema.org/input/0/Content/TripInformation/TripName",
+                                            "type": "string"
+                                        },
+                                        "Move": {
+                                            "id": "http://wso2jsonschema.org/input/0/Content/TripInformation/Move",
+                                            "type": "number"
+                                        },
+                                        "Leg": {
+                                            "id": "http://wso2jsonschema.org/input/0/Content/TripInformation/Leg",
+                                            "type": "number"
+                                        },
+                                        "Stop": {
+                                            "id": "http://wso2jsonschema.org/input/0/Content/TripInformation/Stop",
+                                            "type": "number"
+                                        },
+                                        "OrderHeader": {
+                                            "id": "http://wso2jsonschema.org/input/0/Content/TripInformation/OrderHeader",
+                                            "type": "number"
+                                        },
+                                        "AdditionalDataElements": {
+                                            "id": "http://wso2jsonschema.org/input/0/Content/TripInformation/AdditionalDataElements",
+                                            "type": "array",
+                                            "items": [
+                                                {
+                                                    "id": "http://wso2jsonschema.org/input/0/Content/TripInformation/AdditionalDataElements/0",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "Label": {
+                                                            "id": "http://wso2jsonschema.org/input/0/Content/TripInformation/AdditionalDataElements/0/Label",
+                                                            "type": "string"
+                                                        },
+                                                        "Value": {
+                                                            "id": "http://wso2jsonschema.org/input/0/Content/TripInformation/AdditionalDataElements/0/Value",
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "HeaderInformation": {
+                                    "id": "http://wso2jsonschema.org/input/0/Content/HeaderInformation",
+                                    "type": "object",
+                                    "properties": {
+                                        "CreateDateUtc": {
+                                            "id": "http://wso2jsonschema.org/input/0/Content/HeaderInformation/CreateDateUtc",
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "MessageProperties": {
+                            "id": "http://wso2jsonschema.org/input/0/MessageProperties",
+                            "type": "object",
+                            "properties": {
+                                "EventType": {
+                                    "id": "http://wso2jsonschema.org/input/0/MessageProperties/EventType",
+                                    "type": "string"
+                                },
+                                "AuditId": {
+                                    "id": "http://wso2jsonschema.org/input/0/MessageProperties/AuditId",
+                                    "type": "string"
+                                },
+                                "MessageId": {
+                                    "id": "http://wso2jsonschema.org/input/0/MessageProperties/MessageId",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "title": "root"
+}

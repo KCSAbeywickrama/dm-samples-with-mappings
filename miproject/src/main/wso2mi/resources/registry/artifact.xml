@@ -21,6 +21,30 @@
       <file>dm1_outputSchema.json</file>
       <path>/_system/governance/datamapper/dm1</path>
       <mediaType>text/plain</mediaType>
+      <properties></properties>
+    </item>
+  </artifact>
+  <artifact name="dm2" groupId="com.microintegrator.projects" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>dm2.dmc</file>
+      <path>/_system/governance/datamapper/dm2</path>
+      <mediaType>text/plain</mediaType>
+      <properties></properties>
+    </item>
+  </artifact>
+  <artifact name="dm2_inputSchema" groupId="com.microintegrator.projects" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>dm2_inputSchema.json</file>
+      <path>/_system/governance/datamapper/dm2</path>
+      <mediaType>text/plain</mediaType>
+      <properties></properties>
+    </item>
+  </artifact>
+  <artifact name="dm2_outputSchema" groupId="com.microintegrator.projects" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>dm2_outputSchema.json</file>
+      <path>/_system/governance/datamapper/dm2</path>
+      <mediaType>text/plain</mediaType>
       <properties/>
     </item>
   </artifact>

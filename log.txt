@@ -1,0 +1,26 @@
+dm files not delete when dm delete from ui. same files are reused when recreate with the same name
+adding new data mapper goes to service designer view instead of resource view
+there is a state can't select port 
+unable to selcte output port first
+thripple dot menu icon jumps when mouse hover
+
+
+1./dm-samples-with-mappings/inbound.driver-hos
+issue with initlizing with default value label is showing even after intilizing. 
+need manaul code change for: OrderHeader: input.Content.TripInformation.OrderHeader ?: 0.0, 
+one-many mappings found
+
+2./dm-samples-with-mappings/inbound.driver-hos-metrics
+3./dm-samples-with-mappings/inbound.driver-login
+4./dm-samples-with-mappings/inbound.driver-logout
+5./dm-samples-with-mappings/inbound.freeform-message
+6./dm-samples-with-mappings/inbound.position-status
+7./dm-samples-with-mappings/inbound.structured-form.arrive
+8./dm-samples-with-mappings/inbound.structured-form.depart
+9./dm-samples-with-mappings/inbound.structured-form.emptycall
+10./dm-samples-with-mappings/inbound.structured-form.intermediatestop
+11./dm-samples-with-mappings/inbound.structured-form.loadedcall
+12./dm-samples-with-mappings/inbound.trip-response
+13./dm-samples-with-mappings/log.txt
+14./dm-samples-with-mappings/outbound.assign-trip
+15./dm-samples-with-mappings/outbound.text-message

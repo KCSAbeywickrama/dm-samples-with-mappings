@@ -5,35 +5,39 @@ unable to selcte output port first
 thripple dot menu icon jumps when mouse hover
 
 
-1./dm-samples-with-mappings/inbound.driver-hos
+1./inbound.driver-hos
 issue with initlizing with default value label is showing even after intilizing. 
 need manaul code change for: OrderHeader: input.Content.TripInformation.OrderHeader ?: 0.0, and it is discarded when reload
 one-many mappings found
 
-2./dm-samples-with-mappings/inbound.driver-hos-metrics
+2./inbound.driver-hos-metrics
 based on filters
 
-3./dm-samples-with-mappings/inbound.driver-login
+3./inbound.driver-login
 one-many mappings found: input.MessageProperties.EventType
 empty array not showing: "AdditionalDataElements": []
 one-many mappings can be done using submapings
 
-4./dm-samples-with-mappings/inbound.driver-logout
+4./inbound.driver-logout
 some object accessing parts appeard in expression bar when importing json files
 have to click many times in one-many mapping with submapings
 need explicit data conversion in tripinoformation.order header due to null identified as string data type
 
-5./dm-samples-with-mappings/inbound.freeform-message
+5./inbound.freeform-message
 EmailAddress: RecipientsItem.EmailAddress is null ? "" : <string>RecipientsItem.EmailAddress: manual code change needed
 Web pview should be active to reload code changes (web view and ts file should be in side by side)
 
-6./dm-samples-with-mappings/inbound.position-status
-7./dm-samples-with-mappings/inbound.structured-form.arrive
-8./dm-samples-with-mappings/inbound.structured-form.depart
-9./dm-samples-with-mappings/inbound.structured-form.emptycall
-10./dm-samples-with-mappings/inbound.structured-form.intermediatestop
-11./dm-samples-with-mappings/inbound.structured-form.loadedcall
-12./dm-samples-with-mappings/inbound.trip-response
-13./dm-samples-with-mappings/log.txt
-14./dm-samples-with-mappings/outbound.assign-trip
-15./dm-samples-with-mappings/outbound.text-message
+6./inbound.position-status
+used floor to convert to int
+input.json do not contains full TripInformation fields. Issue with this file. Not the dm
+
+
+
+7./inbound.structured-form.arrive
+8./inbound.structured-form.depart
+9./inbound.structured-form.emptycall
+10./inbound.structured-form.intermediatestop
+11./inbound.structured-form.loadedcall
+12./inbound.trip-response
+13./dm-samples-with-mappings/outbound.assign-trip
+14./dm-samples-with-mappings/outbound.text-message

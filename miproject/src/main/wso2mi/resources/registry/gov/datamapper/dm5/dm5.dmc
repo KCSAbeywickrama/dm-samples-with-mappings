@@ -4,14 +4,11 @@ function mapFunction(input) {
     const MessageProperties_EventType = input.MessageProperties.EventType;
     return {
         dtos: [{
-            type: MessageProperties_EventType,
             data: {
-                MessageContentType: MessageProperties_EventType,
                 MessageGuid: input.MessageProperties.MessageId,
                 ParentMessageGuid: input.MessageProperties.AuditId,
                 MessageContent: {
                     HeaderInformation: input.Content.HeaderInformation,
-                    TripInformation: input.Content.TripInformation,
                     Message: input.Content.Message,
                     Recipients: input.Content.Recipients
                         .map((RecipientsItem) => {
@@ -21,8 +18,10 @@ function mapFunction(input) {
                                 EmailAddress: RecipientsItem.EmailAddress ?? ""
                             }
                         })
-                }
-            }
+                },
+                MessageContentType: input.MessageProperties.EventType
+            },
+            type: input.MessageProperties.EventType
         }]
     };
 }

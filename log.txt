@@ -23,10 +23,10 @@ some object accessing parts appeard in expression bar when importing json files
 have to click many times in one-many mapping with submapings
 need explicit data conversion in tripinoformation.order header due to null identified as string data type
 
-
-
-
 5./dm-samples-with-mappings/inbound.freeform-message
+EmailAddress: RecipientsItem.EmailAddress is null ? "" : <string>RecipientsItem.EmailAddress: manual code change needed
+Web pview should be active to reload code changes (web view and ts file should be in side by side)
+
 6./dm-samples-with-mappings/inbound.position-status
 7./dm-samples-with-mappings/inbound.structured-form.arrive
 8./dm-samples-with-mappings/inbound.structured-form.depart

@@ -4,6 +4,8 @@
             <inSequence>
 			<datamapper config="gov:/datamapper/dm1/dm1.dmc" inputSchema="gov:/datamapper/dm1/dm1_inputSchema.json" inputType="JSON" outputSchema="gov:/datamapper/dm1/dm1_outputSchema.json" outputType="JSON"/>
 			<datamapper config="gov:/datamapper/dm2/dm2.dmc" inputSchema="gov:/datamapper/dm2/dm2_inputSchema.json" inputType="JSON" outputSchema="gov:/datamapper/dm2/dm2_outputSchema.json" outputType="JSON"/>
+			<datamapper config="gov:/datamapper/dm3/dm3.dmc" inputSchema="gov:/datamapper/dm3/dm3_inputSchema.json" inputType="JSON" outputSchema="gov:/datamapper/dm3/dm3_outputSchema.json" outputType="JSON"/>
+			<datamapper config="gov:/datamapper/dm4/dm4.dmc" inputSchema="gov:/datamapper/dm4/dm4_inputSchema.json" inputType="JSON" outputSchema="gov:/datamapper/dm4/dm4_outputSchema.json" outputType="JSON"/>
 		</inSequence>
             <faultSequence>
 		</faultSequence>

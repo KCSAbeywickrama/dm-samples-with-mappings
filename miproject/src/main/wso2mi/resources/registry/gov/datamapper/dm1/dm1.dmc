@@ -14,11 +14,11 @@ function mapFunction(input) {
                     },
                     TripInformation: {
                         AdditionalDataElements: "",
-                        OrderHeader: input.Content.TripInformation.OrderHeader,
                         Stop: input.Content.TripInformation.Stop,
                         Leg: input.Content.TripInformation.Leg,
                         Move: input.Content.TripInformation.Move,
-                        TripName: input.Content.TripInformation.TripName
+                        TripName: input.Content.TripInformation.TripName,
+                        OrderHeader: input.Content.TripInformation.OrderHeader ?? 0.0
                     },
                     EditByUser: "",
                     EditDateTime: input.Content.EditDateTime,

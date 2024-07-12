@@ -17,7 +17,7 @@ interface Root {
             Move: number
             Leg: number
             Stop: number
-            OrderHeader: string
+            OrderHeader: unknown
             Assets: {
                 Type: number
                 Id: string
@@ -86,7 +86,9 @@ function mapFunction(input: Root): OutputRoot {
                     Odometer: input.Content.Odometer,
                     AdditionalDataElements: input.Content.AdditionalDataElements,
                     HeaderInformation: input.Content.HeaderInformation,
-                    TripInformation: input.Content.TripInformation
+                    TripInformation: {
+                        OrderHeader: input.Content.TripInformation.OrderHeader
+                    }
                 }
             }
         }]

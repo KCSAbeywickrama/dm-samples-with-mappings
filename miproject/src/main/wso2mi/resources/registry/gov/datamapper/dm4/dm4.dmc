@@ -16,7 +16,9 @@ function mapFunction(input) {
                     Odometer: input.Content.Odometer,
                     AdditionalDataElements: input.Content.AdditionalDataElements,
                     HeaderInformation: input.Content.HeaderInformation,
-                    TripInformation: input.Content.TripInformation
+                    TripInformation: {
+                        OrderHeader: input.Content.TripInformation.OrderHeader
+                    }
                 }
             }
         }]

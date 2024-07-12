@@ -141,6 +141,30 @@
       <file>dm6_outputSchema.json</file>
       <path>/_system/governance/datamapper/dm6</path>
       <mediaType>text/plain</mediaType>
+      <properties></properties>
+    </item>
+  </artifact>
+  <artifact name="dm7" groupId="com.microintegrator.projects" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>dm7.dmc</file>
+      <path>/_system/governance/datamapper/dm7</path>
+      <mediaType>text/plain</mediaType>
+      <properties></properties>
+    </item>
+  </artifact>
+  <artifact name="dm7_inputSchema" groupId="com.microintegrator.projects" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>dm7_inputSchema.json</file>
+      <path>/_system/governance/datamapper/dm7</path>
+      <mediaType>text/plain</mediaType>
+      <properties></properties>
+    </item>
+  </artifact>
+  <artifact name="dm7_outputSchema" groupId="com.microintegrator.projects" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>dm7_outputSchema.json</file>
+      <path>/_system/governance/datamapper/dm7</path>
+      <mediaType>text/plain</mediaType>
       <properties/>
     </item>
   </artifact>

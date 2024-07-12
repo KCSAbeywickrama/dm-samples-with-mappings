@@ -8,6 +8,7 @@
 			<datamapper config="gov:/datamapper/dm4/dm4.dmc" inputSchema="gov:/datamapper/dm4/dm4_inputSchema.json" inputType="JSON" outputSchema="gov:/datamapper/dm4/dm4_outputSchema.json" outputType="JSON"/>
 			<datamapper config="gov:/datamapper/dm5/dm5.dmc" inputSchema="gov:/datamapper/dm5/dm5_inputSchema.json" inputType="JSON" outputSchema="gov:/datamapper/dm5/dm5_outputSchema.json" outputType="JSON"/>
 			<datamapper config="gov:/datamapper/dm6/dm6.dmc" inputSchema="gov:/datamapper/dm6/dm6_inputSchema.json" inputType="JSON" outputSchema="gov:/datamapper/dm6/dm6_outputSchema.json" outputType="JSON"/>
+			<datamapper config="gov:/datamapper/dm7/dm7.dmc" inputSchema="gov:/datamapper/dm7/dm7_inputSchema.json" inputType="JSON" outputSchema="gov:/datamapper/dm7/dm7_outputSchema.json" outputType="JSON"/>
 		</inSequence>
             <faultSequence>
 		</faultSequence>

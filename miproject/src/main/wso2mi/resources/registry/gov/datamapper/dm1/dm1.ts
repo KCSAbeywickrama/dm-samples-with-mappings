@@ -113,7 +113,9 @@ function mapFunction(input: Root): OutputRoot {
                     EventCode: input.Content.EventCode,
                     EventType: input.Content.EventType,
                     OriginEventId: "",
-                    EventId: input.Content.EventId
+                    EventId: input.Content.EventId,
+                    EventDate: "",
+                    EventDate: ""
                 }
             }
         }]
